@@ -1,0 +1,10 @@
+@import '../../styles/variables.scss';
+
+.form{
+    background: $secondary-color;
+    padding: 40px 0 40px 0;
+    border-radius: 80% 0 80% 0;
+    @media (min-width : 768px) {
+        padding: 60px 40px;
+    }
+}

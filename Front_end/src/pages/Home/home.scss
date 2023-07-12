@@ -1,0 +1,249 @@
+@import url('https://fonts.cdnfonts.com/css/open-dyslexic');
+@import '../../styles/variables.scss';
+
+html,
+body {
+    margin: 0 auto;
+    padding: 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+    width : 100%;
+    max-width: 1440px;
+    font-family: 'Open-Dyslexic','Times New Roman', sans-serif;
+    &  main, section, article {
+        @media (min-width : 1440px){
+            font-size: 120%;
+        }
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width : 100%;
+   background: linear-gradient(45deg, $secondary-color,  $third-color);
+   // position: relative;
+    color :$primary-color;
+    font-weight: bold;
+    /*@media (min-width: 768px) {
+        border-radius: 0 0 60% 0;
+    }*/
+  
+    & h1 {
+        grid-area: 4/2/4/7;
+        font-size: 2.4em;
+        stroke: $primary-color;
+        stroke-width: 1;
+        margin: 0 auto;
+        text-align: center;
+        background : url('../../assets/Highlight\ 12.png');
+        background-repeat: no-repeat;
+        background-size: 80% 90%;
+        width: 90%;
+        @media (min-width : 768px) {
+            grid-column: 4;
+            grid-row: 3;
+            font-size: 2.6em;
+        }
+        }
+    & h2 {
+        text-align: center;
+        @media (min-width: 768px) {
+            font-size: 1.5em;
+        }
+       
+    }
+    & > p {
+        text-align: center;
+        max-width: 75%;
+        margin :20px auto 0 auto;
+        font-size: 1em;
+        @media (min-width: 768px) {
+            max-width: 60%;
+            font-size: 1.2em;
+        }
+    }
+}
+/*
+main:after {
+    @media (min-width: 768px) {
+        display: block;
+        content: '';
+        background: linear-gradient(to left,  $secondary-color, $third-color);
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        position: absolute;
+        bottom : 0;
+    }
+}*/
+
+.banner {
+    display: grid;
+    grid-template-columns: 20px 20px 20px 55vw 20px 20px 20px;
+    grid-template-rows: 10vh 10vh 10vh;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0 0 0;
+    max-height: 380px;
+    max-width: 1440px;
+    overflow: hidden;
+    @media (min-width: 768px) {
+        gap: 10px;
+        padding-top: 50px;
+        margin: 0;
+    }
+    @media (min-width: 1024px) {
+        grid-template-columns: 20px 20px 20px 35vw 0px 20px 20px;
+        gap:0;
+    }
+    & > div {
+        align-self: center;
+        justify-self: center;
+    }
+}
+.bubble__one {
+    grid-column: 2;
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    border : solid 2px $third-color;
+    background: linear-gradient(to left, $third-color, $secondary-color);
+    }
+
+.bubble__two{
+    grid-column: 6;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border : solid 2px $third-color;
+    background: linear-gradient(to right, $third-color, $secondary-color);
+
+    }
+.bubble__three{
+    grid-column: 3;
+    grid-row: 2;
+    justify-content: start;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    border : solid 2px $third-color;
+    background: linear-gradient(to top, $third-color, $secondary-color);
+}        
+.bubble__four{
+    grid-column: 1;
+    grid-row: 3;
+    width: 8vw;
+    height: 8vw;
+    border-radius: 50%;
+    border : solid 2px $third-color;
+    background: linear-gradient(to bottom, $third-color, $secondary-color);
+    }        
+    .bubble__five{
+        grid-column: 7;
+        grid-row: 2;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 50%;
+        border : solid 2px $third-color;
+        background: linear-gradient(to bottom, $third-color, $secondary-color);
+        }            
+    
+
+
+.techstack {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+    width: 90%;
+    height : 100%;
+    @media (min-width: 768px) {
+        margin-top: 0;
+    }
+    
+    &__tags {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        height : 100%;
+        & > .tag {
+            text-align: center;
+            width : 30%;
+            background-color: $primary-color;
+            color : white;
+        }
+    }
+    
+    
+}
+.skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width :80%;
+    height : 100%;
+    @media (min-width: 768px) {
+        margin-top: 0;
+    }
+  
+    &__tags {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        height : 100%;
+        margin-bottom: 20px;
+        & > .tag {
+            text-align: center;
+            width : 50%;
+            color: $primary-color;
+            background-color: $third-color;
+        }
+    }
+    & .arrowRight__line {
+        border-left: solid 5px $primary-color;
+    }
+    & .arrowRight__point {
+        border-right: solid 5px $primary-color;
+    }
+}
+
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    margin: 1.5em auto 0 auto;
+    color: $primary-color;
+    @media (min-width: 768px) {
+        margin-top: 2.5em;
+    }
+    & .title {
+        width: 70%;
+        @media (min-width: 768px) {
+            width : 40%;
+            margin: 30px auto;
+        }
+        @media (min-width: 1024px) {
+            width: 25%;
+        }
+    }
+    &__card {
+        max-width: 95%;
+        margin: 0 auto;
+        @media (min-width: 768px) {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+&  span {
+    padding : 20px;
+}
+}
+
+

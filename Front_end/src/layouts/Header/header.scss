@@ -1,0 +1,83 @@
+@import '../../styles/variables.scss';
+
+
+.header {
+    position : sticky;
+    top:0;
+    //left: 0;
+    z-index: 1;
+    width: 100%;
+    height : 55px;
+    background-color : $primary-color;
+   
+    & img {
+        //height: 2.5em;
+       // width: 2.5em;
+        @media (min-width: 768px) {
+            height: 2em;
+            width: 2em;
+        }
+    }
+    &__navbar{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0px;
+        margin: 0;
+        width: 100%;
+        height: 55px;
+        list-style-type: none;
+        @media (min-width: 768px) {
+            width: 95%;
+        }
+        &--li{
+            opacity: 0;
+            @media (min-width: 768px) {
+                    opacity : 1;
+                    font-size: 1.4em;
+                }    
+            & a {
+                text-decoration: none;
+                color: $third-color;
+                font-size: 0.9em;
+                padding: 5px;  
+              
+                &:active{
+                    border-radius: 20px;
+                    background-color: $third-color;
+                    color:$primary-color;
+                }
+            }
+        }    
+    }
+}
+
+#iconHome{
+    opacity: 1;
+    padding-top: 5px;
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    padding-top: 5px;
+}
+
+.iconNavbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;   
+}
+
+#btnLanguage {
+   display: flex;
+    height: 25px;
+    width: 30px;
+    padding: 15px;
+}
+
+#iconMoon {
+   display: flex;
+    height: 25px;
+    width: 25px;
+    padding: 15px;
+    
+}

@@ -1,0 +1,29 @@
+@import '../../styles/variables.scss';
+
+.arrowLeft{
+    @media (min-width: 768px){
+    display: grid;
+    grid-template-columns: 40px 2px;
+    grid-template-rows: auto auto;
+    margin-left: 40%;
+    height: 1.5em;
+    //transform: rotate(2deg);
+    &__line {
+    grid-area: 1/2/2/1;
+    width: 200px;
+    height: 120px;
+    border-radius: 50%;
+    border-right: solid 8px $secondary-color;
+    transform: rotate(20deg);
+    }
+    &__point{
+        grid-column: 2;
+        grid-row: 2;
+        height: 30px;
+        width: 30px;
+        border-radius: 100%;
+        border-left: solid 6px $secondary-color;
+        transform: translateY(-10px) translateX(40px) rotate(0.1turn);
+    }
+}
+}

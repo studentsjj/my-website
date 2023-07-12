@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+
+a.arrowTop {
+    padding: 3px 3px 0 0;
+    background-color: $secondary-color;
+    & img{
+        border : solid 3px $primary-color;
+        padding : 10px;
+        border-radius: 50%;
+        height: 20px;
+        width: 20px;   
+    }
+   
+}

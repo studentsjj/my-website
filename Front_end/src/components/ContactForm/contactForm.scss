@@ -1,0 +1,48 @@
+@import '../../styles/variables.scss';
+
+form {
+    padding: 20px;
+    background: $primary-color;
+    @media (min-width : 768px) {
+        width: 75%;
+        padding: 40px;
+        margin : 0 auto;
+        font-size: 1.2em;
+    }
+    & label{
+        text-align: center;
+        color: $third-color;
+        font-size: 1.1em;
+        @media (min-width : 768px) {
+            font-size: 1.4em;
+    }
+}
+& div {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+    &  input, textarea, button {
+        color: $primary-color;
+        background: $third-color;
+        padding: 15px;
+        margin-top: 30px;
+        border-radius: 20px; 
+        font-family: inherit; 
+        font-size: 1em;
+        width: 90%;
+    }
+    & button {
+        @media (min-width : 768px) {
+            width: 40%;
+        }
+    }
+    & ::placeholder{
+            color: $primary-color;
+        }
+    & #message{
+            height: 200px;
+    }
+}
+
+    

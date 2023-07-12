@@ -1,0 +1,67 @@
+@import "../../styles/variables.scss";
+
+.collapse {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0 20px 0;
+    width: 100%;
+
+    &__label {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        color: $third-color;
+        font-size: 1em;
+        background-color: $primary-color;
+        border-radius: 5px;
+        padding: 10px;
+        line-height: 19px;
+       // z-index: 1;
+
+        @media (min-width: 768px) {
+            border-radius: 10px;
+            font-size: 1.2em;
+            width: 80%;
+            align-self: center;
+        }
+        & img {
+            align-self: center;
+            width: 16px;
+            height: 9px;
+        }
+    }
+    &__content {
+        margin-top: -5px;
+        z-index: -1;
+        padding: 10px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        height: 100%;
+        font-size: 0.8em;
+        line-height: 180%;
+        color: $primary-color;
+        background: $secondary-color;
+        @media (min-width: 768px) {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            font-size: 0.9em;
+            width: 80%;
+            align-self: center;
+        }
+        &--list{
+            margin: 0;
+            color: $primary-color;
+            background: $secondary-color;
+            font-size: 1em;
+            line-height: 180%;
+            list-style-type: none;
+        }
+        
+    }
+}
+
+.icon-rotate {
+    width: 24px;
+    height: 14px;
+    transform: rotate(180deg);
+}

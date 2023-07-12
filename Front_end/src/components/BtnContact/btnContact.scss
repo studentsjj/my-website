@@ -1,0 +1,44 @@
+@import '../../styles/variables.scss';
+$shake-intensity: 1%;
+
+.contact__arrowTop {
+        display: flex;
+        position: sticky;
+        //overflow:scroll!important;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        margin-top: 20px;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    &:hover{
+        animation : bodyshake 300ms cubic-bezier(.4,.1,.6,.9) 1;
+    }
+    & a.btn__contact{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 40px;
+        text-decoration: none;
+        color : $primary-color;
+        background-color: $secondary-color;
+        font-size: 1.2em;
+        font-weight: bold;
+        width: 100%;
+        &:hover {
+            color : $third-color;
+        }
+    }
+}
+
+@keyframes bodyshake {
+    25% {
+        // entièrement à droite
+        transform: translateX($shake-intensity);
+    }
+    75% {
+        // entièrement à gauche
+        transform: translateX($shake-intensity * -1);
+    }
+}

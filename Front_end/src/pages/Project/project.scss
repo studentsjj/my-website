@@ -1,0 +1,73 @@
+@import '../../styles/variables.scss';
+
+
+
+.project{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__banner {
+        display: flex;
+        justify-content: center;
+        background: linear-gradient(to top,$secondary-color, $third-color) ;
+        border-radius: 70% 0 0 0;
+        @media (min-width : 768px) {
+            width: 60%;
+        }
+        @media (min-width : 1440px) {
+            width: 45%;
+        }
+        & img {
+        object-fit: cover;
+        margin:  40px 40px 10px 40px;
+        width: 18em;
+        height: 12em;
+        @media (min-width : 768px) {
+        width: 25em;
+        height: 15em;
+        }
+    }
+}
+    &__title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+        @media (min-width : 768px) {
+            width: 70%;
+        }
+    & > img {
+        object-fit: cover;
+        height: 36px;
+        width: 48px;
+    }
+    & > .title{
+        font-size: 1.5em;
+        text-align: center;
+        width : 80%;
+        background-size: 90% 90%;
+    @media (min-width : 768px) {
+        width: 60%;
+        font-size: 1.8em;
+        margin: 60px 20px 60px 20px;
+    }
+    @media (min-width : 1440px) {
+        width: 40%;
+        background-size: 80%;
+    }
+}
+}
+&__tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+     & .tag {
+    color : $primary-color;
+    background: linear-gradient(to top, $secondary-color, $third-color);
+    width: 30%;
+    text-align: center;
+    }
+}
+   
+}
