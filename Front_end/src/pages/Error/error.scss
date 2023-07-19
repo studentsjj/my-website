@@ -4,11 +4,9 @@
     @media (min-width: 768px) {
         opacity :0;  
     }
-
 }
 .error {
     margin: 70px;
-    //border: dashed 5px  $secondary-color;
     text-align: center;
     height: 70vh;
     & p{
@@ -16,14 +14,14 @@
         font-size: 2em;
         @media (min-width: 1440px){
             font-size: 3em;
+        }
     }
-}
     & svg {
         @media (min-width: 768px){
         height: 190px;
         width: 280px;
+        }
     }
-}
     & path {
         stroke: $secondary-color;
         stroke-width: 4;
@@ -32,7 +30,6 @@
         fill : $secondary-color;
     }
     & img {
-        object-fit: cover;
         height: 4em;
         width : 4em;
         background : $secondary-color;

@@ -13,8 +13,10 @@
 
     & .title {
         margin: 20px 0 20px 0;
+        font-size: 1.2em;
+        width: 100%;
         @media (min-width : 768px){
-            width: 40%;
+            width: 100%;
         }
     }
     & span {
@@ -25,7 +27,6 @@
         display: flex;
         width: 100%;
         max-width: 400px;
-        margin-left: 35px;
         @media (min-width: 768px){
             max-width: 800px;
             margin-left: 30px;
@@ -67,7 +68,7 @@
     align-items: center;
     justify-content: center;
     background: $third-color;
-    height: 30vh;
+    height: 100%;
     padding: 60px 10px 40px 10px;
     & p{
         padding: 5vh;
@@ -110,7 +111,7 @@
 
 .hardSkills {
     color: $primary-color;
-    padding: 20px 10px 40px 10px;
+    padding: 20px 10px 50px 10px;
     background: $third-color;
    
     &__icon {
@@ -121,7 +122,6 @@
         height : 12vw;
         max-height: 80px;
         margin : 20px;
-        
     }
     &-column {
         display: flex;

@@ -1,6 +1,6 @@
 import './flipcard.scss'
-import avatar from '../../assets/avatar_portrait1.png'
-import portrait from'../../assets/portrait.png'
+import avatar from '../../assets/avatar_portrait.png'
+import portrait from'../../assets/portrait_website.png'
 
 function flipCard() {
 
@@ -15,7 +15,7 @@ function flipCard() {
                     <img  className='avatar' src={portrait} alt ='' />
                 </div>
             </div>
-         </div>
+            </div>
         </>
     )
 }

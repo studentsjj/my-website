@@ -4,7 +4,7 @@ function Title ({content}) {
 
     return (
         <>
-            <h2 className='title'>{content}</h2>
+            <span className='title'>{content}</span>
         </>
     )
 }

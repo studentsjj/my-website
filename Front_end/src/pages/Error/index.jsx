@@ -1,17 +1,29 @@
-import React, { createContext, useContext } from 'react';
+import React, {useState, useEffect} from 'react';
+import { NavLink } from 'react-router-dom';
 import './error.scss';
-import BtnMenu from '../../components/BtnMenu';
 import Header from '../../layouts/Header';
 import Footer from '../../layouts/Footer';
 import ArrowAnimation from '../../components/ArrowAnimation';
 import iconHome from '../../assets/🦆 icon _home.png'
-import { NavLink } from 'react-router-dom';
+import BtnModalLegal from '../../components/BtnModalLegal';
+import useFetch from '../../utils';
+import { LanguageContext } from '../../components/LanguageContext';
 
 
 function Error() {
-
+    const { data, isLoading, error } = useFetch(`data.json`);
+     // Choose language
+     const [language, setLanguage] = useState(() => {
+        const langLocalStorage = localStorage.getItem("language");
+        return langLocalStorage ? langLocalStorage : "fr";
+     });
+    useEffect(() => {
+         localStorage.setItem("language", language);
+     }, [language]);
+     
     return (
         <>
+         <LanguageContext.Provider value ={[language, setLanguage]}>
         <span className='pageError'>
             <Header />
         </span>
@@ -23,8 +35,9 @@ function Error() {
             <ArrowAnimation />
             <NavLink to ='/'> <img src ={iconHome} alt =''/></NavLink>
         </section>
-
         <Footer />
+        <BtnModalLegal />
+        </LanguageContext.Provider>
         </>
     )
 }

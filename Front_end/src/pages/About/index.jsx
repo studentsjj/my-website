@@ -1,11 +1,13 @@
-import React, { createContext, useContext } from 'react';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import {HelmetProvider} from 'react-helmet-async'
 import './about.scss';
 import Header from '../../layouts/Header';
 import Footer from '../../layouts/Footer'
 import BtnContact from '../../components/BtnContact';
 import Title from '../../components/Title'
 import { useEffect, useState } from 'react';
-import Translation from '../Home/data.json'
+import Seo from'../../components/Seo'
 import openClassrooms from '../../assets/openclassrooms.webp'
 import ecole42 from '../../assets/42.png'
 import Tag from '../../components/Tag'
@@ -24,34 +26,39 @@ import Masonry from 'react-masonry-css';
 import BtnMenu from '../../components/BtnMenu';
 import ArrowRight from '../../components/ArrowRight';
 import ArrowLeft from '../../components/ArrowLeft';
-function About() {
-    const [content, setContent]= useState({})
-    let language = localStorage.getItem("language")
-    /*if (!language) {localStorage.setItem("language","en")}
-    if (language==="fr") {setContent(Translation.fr)
-    }else if(language==="en"){setContent(Translation.en)}*/
+import BtnModalLegal from '../../components/BtnModalLegal';
+import useFetch from "../../utils";
+import { LanguageContext } from '../../components/LanguageContext';
 
-  
-    useEffect(() =>{
-        let language = localStorage.getItem("language")
-        if (!language) {localStorage.setItem("language","fr")}
-        if (language==="fr") {setContent(Translation.fr)
-        }else if(language==="en"){setContent(Translation.en)}
-    }, [language])
+function About() {
+    const { data, isLoading, error } = useFetch(`data.json`);
+    if (error) {
+        <NavLink to="/Error"></NavLink>;
+    }
+    // Choose language
+    const [language, setLanguage] = useState(() => {
+       const langLocalStorage = localStorage.getItem("language");
+       return langLocalStorage ? langLocalStorage : "fr";
+    });
+   useEffect(() => {
+        localStorage.setItem("language", language);
+    }, [language]);
 
     return(
         <> 
+            <HelmetProvider>
+            <LanguageContext.Provider value ={[language, setLanguage]}>
+            <Seo title ='Stéphanie Bertaudeau, développeur Web' description ='Portfolio de Stéphanie Bertaudeau, développeur web, qui vous propose la meilleure solution technique optimisée et sécurisée pour vos applications Web adaptée à vos besoins' image = 'http://assets/myWebsite_project.png' imageAlt ='website Home' name='' url='' />
             <BtnMenu />
             <Header />
             <main id="arrowTop">
                 <div className='education'>
-                    
-                <Title content = {content.about_title} />
+                <h1><Title content = {data[language]?.about_title} /></h1>
                 <ArrowRight />
                 <span>2022-2023</span>
                 <Masonry breakpointCols={2} className='openC' columnClassName='openC_column'>
                     <img src ={openClassrooms} alt='' />
-                    <p>{content.about_education1}</p>
+                    <p>{data[language]?.about_education1}</p>
                 </Masonry><
                 span> 07-08 2022</span>
                 <Masonry breakpointCols={2} className='ecole42' columnClassName='ecole42_column'>
@@ -61,18 +68,18 @@ function About() {
                 <ArrowLeft />
             </div>
             <div className='explain'> 
-                <p>{content.about_explain}</p> 
+                <p>{data[language]?.about_explain}</p> 
                 <ArrowRight />  
             </div>
             <section className='softSkills'>  
-                <Title content = 'Soft SKills' />
-                {content.about_soft_skills && content.about_soft_skills.map((tag, index) => (
+                <h2><Title content = 'Soft SKills' /></h2>
+                {data[language]?.about_soft_skills && data[language]?.about_soft_skills.map((tag, index) => (
                             <Tag tag={tag} key={index} className ='softSkills__tags-tag'/>
                         ))}
                 <ArrowLeft />   
             </section>
             <section className='hardSkills'>
-                <Title content = 'Hard Skills' />
+                <h2><Title content = 'Hard Skills' /></h2>
                 <div className='hardSkills__icon'>
                     <Masonry breakpointCols={3} className='hardSkills__icon-column'>
                     <img className='html' src ={htmlIcon} alt ='' />
@@ -91,12 +98,14 @@ function About() {
                     <img className='slack' src ={slackIcon} alt ='' />
                     <img className='figma' src ={figmaIcon} alt ='' />
                     <img className='notion' src ={notionIcon} alt ='' /></Masonry>
-                 </div>
+                </div>
             </section>
             </main>
-            
             <BtnContact />
             <Footer />
+            <BtnModalLegal />
+            </LanguageContext.Provider>
+            </HelmetProvider>
         </>
     )
 }

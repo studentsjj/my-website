@@ -1,72 +1,104 @@
-import React, { useState, useEffect } from "react";
-import Translation from '../../pages/Home/data.json'
-import './contactForm.scss'
-
+import React, { useState, useEffect, useContext } from "react";
+import "./contactForm.scss";
+import useFetch from "../../utils";
+import { LanguageContext } from "../LanguageContext";
 
 const ContactForm = () => {
-  const [content, setContent]= useState({})
-    let language = localStorage.getItem("language")
-    /*if (!language) {localStorage.setItem("language","en")}
-    if (language==="fr") {setContent(Translation.fr)
-    }else if(language==="en"){setContent(Translation.en)}*/
+const { data, isLoading, error } = useFetch(`data.json`); 
+const [language]=useContext(LanguageContext)
+const [status, setStatus] = useState(false);
+const [statusSend, setStatusSend] = useState(0);
+const [double, setDouble] = useState(false);   
 
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setStatus(true);
   
-    useEffect(() =>{
-        let language = localStorage.getItem("language")
-        if (!language) {localStorage.setItem("language","fr")}
-        if (language==="fr") {setContent(Translation.fr)
-        }else if(language==="en"){setContent(Translation.en)}
-    }, [language])
-    
-  const [status, setStatus] = useState("Envoyer");
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("Envoi...");
-    const { name, email, message } = e.target.elements;
-    let details = {
+  const { name, firstname, email, message } = e.target.elements;
+  let details = {
       name: name.value,
+      firstname : firstname.value,
       email: email.value,
       message: message.value,
-    };
-    let response = await fetch("http://localhost:5000/contact", {
+  };
+  let response = await fetch("http://localhost:5000/contact", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json;charset=utf-8",
+          "Content-Type": "application/json;charset=utf-8",
       },
       body: JSON.stringify(details),
-    });
-    setStatus("Envoyer");
-    let result = await response.json();
-    if (result.status) {
-      setStatus("Votre message a bien été envoyé")
-    } else {
-      setStatus("Une erreur s'est produite lors de l'envoi de votre message")
-    };
-  };
- 
-
-  return (
-  <form onSubmit={handleSubmit}>
-    <div>
-      <label>{content.form_title}</label>
-    </div>
-      <div>
-        <input id="email" name="email" type="email" placeholder="Email" required></input>
-      </div>
-      <div>
-          <input id="name" name="name" type="text" placeholder={content.form_name} required></input>
-      </div>
-      <div>
-      <input id="firstname" name="firstname" type="text" placeholder={content.form_firstname} required></input> 
-      </div>
-      <div>
-        <textarea id="message" name="message" type="message" placeholder={content.form_message} required maxLength={500}></textarea>
-      </div>
-      <div>
-        <button id="form_btn" type="submit">{status}</button>
-      </div>
-    </form>
-  );
+  });
+  setStatus(data[language]?.form_btn);
+  setDouble(true);
+  let result = await response.json();
+  if (result.status) {
+      setStatusSend(1);
+  } else {
+      setStatusSend(2);
+  }
 };
 
+return (
+  <form onSubmit={handleSubmit}>
+      <div>
+          <legend>{data[language]?.form_title}</legend>
+      </div>
+      <label htmlFor= "email">email</label>
+      <div>
+          <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Email"
+              required
+          ></input>
+      </div>
+      <label htmlFor= "name">name</label>
+      <div>
+          <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder={data[language]?.form_name}
+              required
+          ></input>
+      </div>
+      <label htmlFor= "firstname">firstname</label>
+      <div>
+          <input
+              id="firstname"
+              name="firstname"
+              type="text"
+              placeholder={data[language]?.form_firstname}
+              required
+          ></input>
+      </div>
+      <label htmlFor= "message">message</label>
+      <div>
+          <textarea
+              id="message"
+              name="message"
+              type="message"
+              placeholder={data[language]?.form_message}
+              required
+              maxLength={500}
+          ></textarea>
+      </div>
+      <div>
+          <button disabled={double} id="form_btn" type="submit">
+              {status ? data[language]?.form_btn_status : data[language]?.form_btn}
+          </button>
+      </div>
+      {statusSend > 0 ? (
+          <div>
+              <p>
+                  {statusSend !== 1
+                      ? data[language]?.form_statusSend_error
+                      : data[language]?.form_statusSend_ok}{" "}
+              </p>
+          </div>
+      ) : null}
+  </form>
+);
+};
 export default ContactForm;

@@ -1,24 +1,23 @@
+
+import React, { useContext, useState,} from "react";
 import './btnLanguage.scss'
-import React, { useState,} from "react";
 import iconUK from '../../assets/🦆 icon _United Kingdom_.png'
 import iconFrance from '../../assets/icon_france.png'
+import {LanguageContext} from "../LanguageContext";
 function BtnLanguage (){
-
-    const [isActive, setIsActive] = useState(false);
+    const [language, setLanguage] = useContext(LanguageContext)
 
     return(
         <>
         <div className='btnLanguage'>
-            <img   id ='btnLanguage' onClick={() => {
-                    setIsActive(!isActive);
-                    (isActive? localStorage.setItem("language","fr"): localStorage.setItem("language","en"));
-                    
-                }}src ={isActive ? iconFrance : iconUK } alt=''
+            <img  alt='choose your language' id ='btnLanguage' onClick={() => {
+                    (language ==='en') ? localStorage.setItem("language","fr"): localStorage.setItem("language","en");
+                   (language ==='en') ? setLanguage("fr"): setLanguage("en")
+                }} src ={(language==='en') ? iconFrance : iconUK } 
                         className='iconNavbar'
                     />
         </div>
         </>
     )
 }
-
 export default BtnLanguage;

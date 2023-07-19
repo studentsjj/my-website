@@ -1,37 +1,150 @@
-[
-       
+{ 
+
+    "fr"  : {
+        "title": "Développeur Web",
+        "navbar_about":"A propos de moi",
+        "presentation" :"Professionnelle diplômée, je suis à l’écoute de vos projets pour vous proposer la meilleure solution technique optimisée pour vos besoins et sécurisée pour vos utilisateurs.",
+        "tagTechStack": ["CSS", "HTML", "Javascript", "MongoDb", "Express js", "React js", "Node js", "Figma", "Notion", "Git"],
+        "tagSkills": ["GREEN CODE", "OWASP", "SEO", "ACCESSIBILITE","RESPONSIVE"],
+        "gallery_title" : "Derniers projets",
+        "gallery_card_title": "Optimisation et debug",
+        "footer_mentions" : "Mentions legales",
+        "footer_realise" : "2023 Réalisé par Stéphanie Bertaudeau",
+        "about_title": "Formation",
+        "about_education1" : "Développeur Web Formation e-learning OpenClassrooms",
+        "about_explain" : "Après une vie professionnelle au sein des secteurs de la santé et du médico-social, j’ai choisi de débuter une reconversion professionnelle dans le développement Web afin de proposer des solutions accessibles à tous, responsives, sécurisées et GREEN CODE Friendly.",
+        "about_soft_skills": ["Curiosité", "Collaboration", "Autonomie","Problem solving", "Adaptabilité", "Optimisme", "Learning", "Ecoute active"],
+        "portfolio_done_title" :"Projets réalisés lors de la formation Développeur Web OpenClassrooms",
+        "portfolio_todo_title" : "Projets en cours de développement",
+        "portfolio_todo_card_one" : "Site internet association Charente Passion Mécanique",
+        "portfolio_todo_card_two" : "Portfolio 4L Trophy Equipage 4L Reds",
+        "portfolio_todo_card_three" : "Site e-commerce Viticulture",
+        "col_project" :"Le projet",
+        "col_problem" :"Les problématiques rencontrées",
+        "col_skill" : "Les compétences développées",
+        "form_title" : "Un projet, une idée, une demande de collaboration, rencontrons-nous",
+        "form_name" : "Nom",
+        "form_firstname":"Prénom",
+        "form_message":"Votre message",
+        "form_btn": "Envoyez", 
+        "form_btn_status" : "Envoi...",
+        "form_statusSend_error" :"Une erreur s'est produite lors de l'envoi de votre message.",
+        "form_statusSend_ok" : "Votre message a bien été envoyé.",
+        "project" : [
             {
-                 "id" : "1",
-                 "title":"Optimisation et débug",
-                 "picture_src": "/assets/nina.webp",
-                 "tags" :["Performance", "SEO", "Accessibilité", "DevTools","PageSpeed Insights" ],
-                 "col_project" :" ",
-                 "col_problem" :" ",
-                 "col_skill":""
-            }, 
-            {
-                "id" :"2",
-                "title" : "essai",
-                "picture_src": "/assets/nina.webp"
+                "id" :"1",
+                "title" : "Front-end d'une application Web de location immobilière",
+                "picture_src": "/assets/kasa_project.webp",
+                "linkGit":"https://github.com/studentsjj/Kasa-plateform",
+                "tags" :["REACT", "Create React App", "React Router", "FIGMA","SASS" ],
+                "col_project" :" Projet d'implémentation du front-end d'une application de location immobilière, développé avec React en utilisant les composants React, les routes React Router, en suivant les maquettes Figma prédéfinies.",
+                "col_problem" : ["1. Organiser la navigation entre les différentes pages : utilisation de react router permettant de définir chaque route et d'y associer l'id de chaque projet pour une page personnalisée par location immobilière.","2. Composant slideshow : gestion du défilement des photos de la galerie au moyen du gestionnaire d'évènement onClick.","3. Composant Collapse : gestion de l'évenement d'ouverture et fermeture du composant et mise en place de l'animation de l'icone.", "4. Composant Rating : permet la conversion d'une note chiffrée en affichage du nombre d'étoiles correspondant.", "5. Utilisation des différentes méthodes permettant la gestion des données : .map pour la lecture des tableaux, .find pour renvoyer la valeur du pemier élément trouvé, ainsi que le hook de react router useParams qui renvoie un objet de paires clé/valeur des paramètres dynamiques de l'URL actuelle.", "5. Gestion des erreurs de navigation et redirection vers la page error si nécessaire."],
+                "col_skill":["- Initialiser une application avec Create React App", "- Développer des éléments de l'interface d'un site web grâce à des composants React", "- Configurer la navigation entre les pages de l'application avec React Router"]
             },
             {
+                "id" : "2",
+                "title":"Optimisation et débug",
+                "picture_src": "/assets/nina.webp",
+                "linkGit" : "https://github.com/studentsjj/nina-carducci-photographe",
+                "tags" :["Performance", "SEO", "Accessibilité", "DevTools","PageSpeed Insights" ],
+                "col_project" :" Proposer une prestation d’optimisation du site de Nina Carducci, photographe professionnelle et produire un rapport d'intervention.",
+                "col_problem" : ["1. Optimisation des images du site : Initialement, des images trop lourdes rendent la page très longue à charger. Chaque image a été redimensionnée et transformée en format Webp.","2. Optimisation du code et de sa structure, afin d’améliorer le référencement naturel et local : Mise en place d'un code HTML favorisant le référencement local, minification des fichiers, retrait du code inutilisé.", "3. Accessibilité du site : Utilisation des outils Wave, pour un audit accessibilité, headinsMap pour la structuration de la page, et  TPGi Colour Contrast Analyser pour l'amélioration du contraste.","4. Debug du site au niveau de l'affichage de la gallerie d'image et des boutons de tri par catégorie"],
+                "col_skill": ["- Utilisation des différents outils d'audit dont PageSpeedInsights, ainsi que de DevTools pour débuguer le site", "- Rédaction d'un rapport d'intervention avec un cahier de recette"]
+            }, 
+            {
                 "id" :"3",
-                "title" : "essai",
-                "picture_src": "/assets/nina.webp"
+                "title" : "Back-end d'un site de notation de livre",
+                "picture_src": "/assets/backend_project.webp",
+                "linkGit" : "https://github.com/studentsjj/mon_vieux_grimoire_backend",
+                "tags" :["MERN", "Base de données",  "Authentification","Autorisation","GREEN CODE"],
+                "col_project" :" Développer le Back-end d'un site de notation de livre qui permet aux membres d’ajouter un nouveau livre et de mettre une note visible par le public. Le projet doit être conforme aux bonnes pratiques du Green Code en prenant en compte la taille des images transmises par les utilisateurs.",
+                "col_problem" : ["1. Mise en place d'un serveur Node permettant la gestion de la base de donnée des livres : mise en place conjointe de l'application Express permettant les middelwares et l'implémentation de la base de données NOSQL MongoDb. L'outil Postman a été utilisé pour la gestion des routes CRUD.","2. Authentification, autorisation et sécurisation : afin d'assurer la sécurité de l'application, Bcrypt, algorithme de hash des mots de passe, a été utilisé ainsi que jsonwebtoken pour les jetons d'accès. Les entrées email et password font l'objet d'une validation par email-validator et password-validator.","3. Optimisation des images téléchargées au moyen des modules Multer et Sharp afin de limiter les besoins en stockage et ainsi être conforme aux bonnes pratiques du GREEN CODE.","4. Suivi des spécifications techniques : dans le cadre d'une collaboration entre développeurs, ce projet est l'occasion de mettre en oeuvre la nécessité d'un document de spécifications fonctionnelles  afin que chaque collaborateur puisse avoir la même vue d'ensemble du projet." ],
+                "col_skill": ["- Stocker des données de manière sécurisée", "- Mettre en œuvre des opérations CRUD de manière sécurisée", "- Collaboration", "- Prise en compte des spécifications techniques"]
             },
             {
                 "id" :"4",
-                "title" : "essai4",
-                "picture_src": "/assets/nina.webp"
+                "title" : "Création et publication d'un portfolio de développeur",
+                "picture_src": "/assets/myWebsite_project.webp",
+                "linkGit" : "https://github.com/studentsjj/my-website",
+                "tags" :["REACT", "FIGMA", "Nodemailer","Sass","GITHUB-PAGES", "User eXperience"],
+                "col_project" :" Développer un portfolio de développeur afin de présenter les projets réalisés et présenter les compétences associées.",
+                "col_problem" : ["1. Définition des spécifications fonctionnelles et techniques : préalable à tout début de projet, elles ont permis la définition du projet et des choix techniques associés.","2. Réalisation des maquettes du projet : Parallèlement, l'outil Figma a servi d'appui à la création de maquettes en version mobile et desktop avant d'initier l'intégration par la suite.", "3. Prise en compte de l'UX : afin de faciliter l'expérience des utilisateurs, des animations dynamiques et/ou visuelles ont été mises en place dans le but de faciliter la navigation, la rendre plus agréable et maintenir l'attention de l'utilisateur.", "4. Gestion du formulaire de contact : la configuration de l'envoi des données recueillies lors de la saisie du formulaire de contact a demandé la création d'une partie back-end et l'envoi par email des données au moyen du package Nodemailer.","5. SEO : mise en place du référencement naturel avec les balises meta et metaTags facebook et twitter." ,"6. Gestion de l'évolution des projets : dans un premier temps les données sont stockées dans un fichier json, dans la perspective d'une maintenance évolutive une modale avec login et saisie des différentes données liées à un projet est envisagée.", "6. Hébergement du site : ", "7. Maitenance évolutive : outre la gestion de l'implémentation de nouveaux projets, afin de proposer une meilleure accessibilité, un mode sombre d'affichage pourra être développé, tout comme la possibilité d'un site traduit en langue anglaise."],
+                "col_skill": ["- Gestion de projet", "- Configurer la navigation entre les pages de l'application avec React Router", "- SEO, référencement naturel", "- Utilisation de la librairie Sass", "- Déploiement d'un site en ligne"]
+            } 
+        ]
+    },
+    "en" : {
+        "title": "Web Developer",
+        "navbar_about":"About me",
+        "presentation":"A qualified professional, I listen to your projects to offer you the best technical solution optimized for your needs and secure for your users.",
+        "tagTechStack": ["CSS", "HTML", "Javascript", "MongoDb", "Express js", "React js", "Node js", "Figma", "Notion", "Git"],
+        "tagSkills": ["GREEN CODE", "OWASP", "SEO", "ACCESSIBILITY","RESPONSIVE"],
+        "gallery_title" : "Last projects",
+        "gallery_card_title": "Optimization and debug",
+        "footer_mentions" : "Legal Notice",
+        "footer_realise" : "2023 Directed by Stéphanie Bertaudeau",
+        "about_title": "Education",
+        "about_education1" : "Web developer Education e-learning OpenClassrooms",
+        "about_explain": "After a professional life in the health and medico-social sectors, I chose to start a professional retraining in web development in order to offer solutions accessible to all, responsive, secure and GREEN CODE Friendly.",
+        "about_soft_skills": ["Curiosity", "Collaboration", "Autonomy", "Problem solving", "Adaptability", "Optimism", "Learning", "Active listening"],
+        "portfolio_done_title" :"Projects carried out during the OpenClassrooms Web Developer training",
+        "portfolio_todo_title" : "Projects under development",
+        "portfolio_todo_card_one" : "Charente Passion Mécanique association website",
+        "portfolio_todo_card_two" : "Portfolio 4L Trophy Team 4L Reds",
+        "portfolio_todo_card_three" : "Viticulture e-commerce site",
+        "col_project": "The project",
+        "col_problem": "The problems encountered",
+        "col_skill": "The skills developed",
+        "form_title": "A project, an idea, a request for collaboration, let's meet",
+        "form_name": "Name",
+        "form_firstname":"FirstName",
+        "form_message":"Your message",
+        "form_btn": "Send",
+        "form_btn_status" : "Sending...",
+        "form_statusSend_error" :"An error occurred while sending your message.",
+        "form_statusSend_ok": "Your message has been sent successfully.",
+        "project": [
+            {
+                "id": "1",
+                "title": "Front-end of a real estate rental web application",
+                "picture_src": "/assets/kasa_project.webp",
+                "linkGit":"https://github.com/studentsjj/Kasa-plateform",
+                "tags":["REACT", "Create React App", "React Router", "FIGMA","SASS" ],
+                "col_project": "Project to implement the front-end of a real estate rental application, developed with React using React components, React Router routes, following the predefined Figma mockups.",
+                "col_problem": ["1. Organize the navigation between the different pages: use of react router allowing to define each route and to associate the id of each project to it for a personalized page by real estate rental.","2. Component slideshow: management of the scrolling of photos in the gallery using the onClick event handler.","3. Collapse component: management of the opening and closing event of the component and implementation of the animation of the icon.", "4. Rating component: allows the conversion of a numerical rating into a display of the corresponding number of stars.", "5. Use of different methods for data management: .map for reading tables, .find to return the value of the first element found, as well as the react router useParams hook which returns an object of key/value pairs of the dynamic parameters of the current URL.", "5. Handling navigation errors and redirecting to the error page if necessary."],
+                "col_skill":["- Initialize an application with Create React App", "- Develop interface elements of a website using React components", "- Configure navigation between application pages with React Router"]
             },
             {
-                "id" :"5",
-                "title" : "essai5",
-                "picture_src": "/assets/nina.webp"
+                "id": "2",
+                "title":"Optimization and Debugging",
+                "picture_src": "/assets/nina.webp",
+                "linkGit": "https://github.com/studentsjj/nina-carducci-photographe",
+                "tags":["Performance", "SEO", "Accessibility", "DevTools","PageSpeed Insights" ],
+                "col_project": "Proposing an optimization service for the site of Nina Carducci, professional photographer and producing an intervention report.",
+                "col_problem": ["1. Optimization of site images: Initially, too heavy images make the page very long to load. Each image has been resized and transformed into Webp format.","2. Optimization of the code and its structure, in order to improve natural and local referencing: Implementation of HTML code promoting local referencing, minification of files, removal of unused code.", "3. Accessibility of the site: Use of Wave tools, for a accessibility audit, headinsMap for the structuring of the page, and TPGi Color Contrast Analyzer for the improvement of the contrast."],
+                "col_skill": ["- Use of various audit tools including PageSpeedInsights, as well as DevTools to debug the site", "- Writing of an intervention report with a recipe book"]
             },
             {
-                "id" :"6",
-                "title" : "essai6",
-                "picture_src": "/assets/nina.webp"
-            }    
-]
+                "id": "3",
+                "title": "Back-end of a book rating site",
+                "picture_src": "/assets/backend_project.webp",
+                "linkGit": "https://github.com/studentsjj/mon_vieux_grimoire_backend",
+                "tags":["MERN", "Database", "Authentication","Authorization","GREEN CODE"],
+                "col_project": "Develop the Back-end of a book rating site that allows members to add a new book and put a rating visible to the public. The project must comply with Green Code best practices by taking into account the size of the images transmitted by users.",
+                "col_problem": ["1. Implementation of a Node server allowing the management of the book database: joint implementation of the Express application allowing middelware and the implementation of the NOSQL MongoDb database The Postman tool was used for CRUD route management.","2. Authentication, authorization and security: in order to ensure the security of the application, Bcrypt, a password hash algorithm, was used as well as jsonwebtoken for access tokens. Email and password inputs are validated by email-validator and password-validator.","3. Optimized uploaded images using Multer and Sharp modules to limit storage needs and thus comply with GREEN CODE good practices.","4. Monitoring of technical specifications: as part of a collaboration between developers, this project is an opportunity to implement the need for a functional specification document so that each collaborator can have the same overview of the project." ],
+                "col_skill": ["- Store data securely", "- Implement CRUD operations in a secure manner", "- Collaboration", "- Consider technical specifications"]
+            },
+            {
+                "id": "4",
+                "title": "Creating and publishing a developer portfolio",
+                "picture_src": "/assets/myWebsite_project.webp",
+                "linkGit": "https://github.com/studentsjj/my-website",
+                "tags":["REACT", "FIGMA", "Nodemailer","Sass","GITHUB-PAGES", "User eXperience"],
+                "col_project": "Develop a developer portfolio in order to present the projects carried out and present the associated skills.",
+                "col_problem": ["1. Definition of functional and technical specifications: prior to any start of the project, they allowed the definition of the project and the associated technical choices.","2. Creation of the project models: In parallel, the Figma tool was used to support the creation of models in mobile and desktop versions before initiating the integration afterwards.", "3. Consideration of UX: in order to facilitate the user experience, dynamic and/or visual animations have been implemented in order to facilitate navigation, make it more pleasant and maintain the user's attention.", "4. Contact form management: the configuration of the sending the data collected when entering the contact form requested the creation of a back-end part and the sending by email of the data using the Nodemailer package.","5. SEO: implementation of natural referencing with meta tags and metaTags facebook and twitter." ,"6. Management of the evolution of projects: initially the data is stored in a json file, in the perspective of an evolutionary maintenance a modal with login and entry of the various data related to a project is envisaged." , "6. Hosting of the site: ", "7. Scalable maintenance: in addition to managing the implementation of new projects, in order to offer better accessibility, a dark display mode may be developed, as well as the possibility of a site translated into English."],
+                "col_skill": ["- Project management", "- Configure navigation between application pages with React Router", "- SEO, natural referencing", "- Use of the Sass library", "- Deployment of 'an online site"]
+            }
+        ]
+    }
+}
+

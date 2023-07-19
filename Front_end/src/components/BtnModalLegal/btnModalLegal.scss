@@ -1,0 +1,19 @@
+@import '../../styles/variables.scss';
+
+.btn__modalLegal {
+    position: relative;
+    bottom : 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 3;
+    & button {
+        border : none;
+        background-color: $primary-color; 
+        color : $third-color;
+        font-family: 'Open-Dyslexic','Times New Roman', sans-serif;
+        font-size: 0.7em;
+        cursor : pointer;
+    }
+}

@@ -6,18 +6,16 @@ import Header from'../../layouts/Header'
 
 function BtnMenu() {
     const [isOpen, setIsOpen] = useState(false);
-
-    return (
+return (
         <>
         <div className="btnMenu">
             <img
-                  onClick={() => {
+                onClick={() => {
                     setIsOpen(!isOpen);
                 }}
                 className={isOpen ? "icon__close" : "icon__menu"}
                 src={isOpen ?  iconClose : iconMenu}
                 alt=""
-              
             />
             {isOpen ?(
                 <Header />

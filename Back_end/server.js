@@ -32,6 +32,7 @@ const contactEmail = nodemailer.createTransport({
 
   router.post("/contact", (req, res) => {
     const name = req.body.name;
+    const firstname = req.body.firstname;
     const email = req.body.email;
     const message = req.body.message; 
     const mail = {
@@ -39,8 +40,9 @@ const contactEmail = nodemailer.createTransport({
       to: "contactform.studentsjj@gmail.com",
       subject: "Contact Form Submission",
       html: `<p>Name: ${name}</p>
-             <p>Email: ${email}</p>
-             <p>Message: ${message}</p>`,
+              <p>Firstname :${firstname}</p>
+              <p>Email: ${email}</p>
+              <p>Message: ${message}</p>`,
     };
     contactEmail.sendMail(mail, (error) => {
       if (error) {

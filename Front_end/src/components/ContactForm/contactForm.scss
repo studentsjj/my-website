@@ -9,7 +9,10 @@ form {
         margin : 0 auto;
         font-size: 1.2em;
     }
-    & label{
+    & label {
+        visibility: hidden;
+    }
+    & legend{
         text-align: center;
         color: $third-color;
         font-size: 1.1em;
@@ -22,19 +25,26 @@ form {
     justify-content: center;
     width: 100%;
 }
-    &  input, textarea, button {
+    &  input, textarea, button, p {
         color: $primary-color;
         background: $third-color;
         padding: 15px;
-        margin-top: 30px;
+        margin-top: 20px;
         border-radius: 20px; 
         font-family: inherit; 
         font-size: 1em;
         width: 90%;
     }
+    & p {
+        text-align: center;
+        width: 75%;
+    }
     & button {
         @media (min-width : 768px) {
             width: 40%;
+        }
+        &:disabled{
+            background: $primary-color;
         }
     }
     & ::placeholder{

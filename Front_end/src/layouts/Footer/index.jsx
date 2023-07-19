@@ -1,28 +1,22 @@
-import React, {useState, useEffect} from "react";
-import Translation from "../../pages/Home/data.json"
-import './footer.scss'
+import React, {useContext} from "react";import './footer.scss'
 import iconGit from '../../assets/🦆 icon _github_.png'
 import iconLink from '../../assets/🦆 icon _linkedin_.png'
+import useFetch from "../../utils";
+import { LanguageContext } from "../../components/LanguageContext";
+
 
 function Footer() {
-    const [content, setContent]= useState({})
-    useEffect(() =>{
-        let language = localStorage.getItem("language")
-        if (!language) {localStorage.setItem("language","fr")}
-        if (language==="fr") {setContent(Translation.fr)
-        }else if(language==="en"){setContent(Translation.en)}
-    }, [])
+    const { data, isLoading, error } = useFetch(`../data.json`);
+    const [language] = useContext(LanguageContext)
     return (
         <footer>
             <div className='footer__icon'>
-                <img src = {iconGit} alt ='' />
-                <img src = {iconLink} alt ='' />
+                <a href="https://github.com/studentsjj?tab=repositories" target="_blank" rel="noreferrer"><img src = {iconGit} alt ='Link GitHub' /></a>
+                <a href="https://www.linkedin.com/learning/search?trk=content-hub-home-page_guest_nav_menu_learning" target="_blank" rel="noreferrer"><img src = {iconLink} alt ='Link Linkedin' /></a>
             </div>
-            <span>{content.footer_mentions}</span>
-            <p>{content.footer_realise}</p>
+            <p>{data[language]?.footer_realise}</p>
+            
         </footer>
-
     );
 }
-
 export default Footer;

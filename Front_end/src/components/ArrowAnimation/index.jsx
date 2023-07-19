@@ -5,7 +5,7 @@ import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 
 function ArrowAnimation () {
 
-    gsap.registerPlugin(MotionPathPlugin);
+gsap.registerPlugin(MotionPathPlugin);
 
 const displayAnimation = (elem, delay, duration)=> {
     gsap.to(elem, {

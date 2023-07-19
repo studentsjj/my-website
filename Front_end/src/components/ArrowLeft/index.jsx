@@ -7,7 +7,7 @@ function ArrowRight(){
             <div className='arrowLeft'>
                 <div className='arrowLeft__line'></div>
                 <div className='arrowLeft__point'></div>
-        </div>
+            </div>
         </>
     )
 }
