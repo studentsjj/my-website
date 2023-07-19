@@ -15,9 +15,9 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/my-website">
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route exact path="/my-website" element={<Home />} />
                 <Route path="/About me" element={<About />} />
                 <Route path="/Portfolio" element={<Portfolio />} />
                 <Route path="/Project/:id" element={<Project />} />
