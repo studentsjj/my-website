@@ -34,7 +34,7 @@
             {
                 "id" :"1",
                 "title" : "Front-end d'une application Web de location immobilière",
-                "picture_src": "/assets/kasa_project.webp",
+                "picture_src": "/my-website/assets/kasa_project.webp",
                 "linkGit":"https://github.com/studentsjj/Kasa-plateform",
                 "tags" :["REACT", "Create React App", "React Router", "FIGMA","SASS" ],
                 "col_project" :" Projet d'implémentation du front-end d'une application de location immobilière, développé avec React en utilisant les composants React, les routes React Router, en suivant les maquettes Figma prédéfinies.",
@@ -44,7 +44,7 @@
             {
                 "id" : "2",
                 "title":"Optimisation et débug",
-                "picture_src": "/assets/nina.webp",
+                "picture_src": "/my-website/assets/nina.webp",
                 "linkGit" : "https://github.com/studentsjj/nina-carducci-photographe",
                 "tags" :["Performance", "SEO", "Accessibilité", "DevTools","PageSpeed Insights" ],
                 "col_project" :" Proposer une prestation d’optimisation du site de Nina Carducci, photographe professionnelle et produire un rapport d'intervention.",
@@ -54,7 +54,7 @@
             {
                 "id" :"3",
                 "title" : "Back-end d'un site de notation de livre",
-                "picture_src": "/assets/backend_project.webp",
+                "picture_src": "/my-website/assets/backend_project.webp",
                 "linkGit" : "https://github.com/studentsjj/mon_vieux_grimoire_backend",
                 "tags" :["MERN", "Base de données",  "Authentification","Autorisation","GREEN CODE"],
                 "col_project" :" Développer le Back-end d'un site de notation de livre qui permet aux membres d’ajouter un nouveau livre et de mettre une note visible par le public. Le projet doit être conforme aux bonnes pratiques du Green Code en prenant en compte la taille des images transmises par les utilisateurs.",
@@ -64,7 +64,7 @@
             {
                 "id" :"4",
                 "title" : "Création et publication d'un portfolio de développeur",
-                "picture_src": "/assets/myWebsite_project.webp",
+                "picture_src": "/my-website/assets/myWebsite_project.webp",
                 "linkGit" : "https://github.com/studentsjj/my-website",
                 "tags" :["REACT", "FIGMA", "Nodemailer","Sass","GITHUB-PAGES", "User eXperience"],
                 "col_project" :" Développer un portfolio de développeur afin de présenter les projets réalisés et présenter les compétences associées.",
@@ -107,7 +107,7 @@
             {
                 "id": "1",
                 "title": "Front-end of a real estate rental web application",
-                "picture_src": "/assets/kasa_project.webp",
+                "picture_src": "/my-website/assets/kasa_project.webp",
                 "linkGit":"https://github.com/studentsjj/Kasa-plateform",
                 "tags":["REACT", "Create React App", "React Router", "FIGMA","SASS" ],
                 "col_project": "Project to implement the front-end of a real estate rental application, developed with React using React components, React Router routes, following the predefined Figma mockups.",
@@ -117,7 +117,7 @@
             {
                 "id": "2",
                 "title":"Optimization and Debugging",
-                "picture_src": "/assets/nina.webp",
+                "picture_src": "/my-website/assets/nina.webp",
                 "linkGit": "https://github.com/studentsjj/nina-carducci-photographe",
                 "tags":["Performance", "SEO", "Accessibility", "DevTools","PageSpeed Insights" ],
                 "col_project": "Proposing an optimization service for the site of Nina Carducci, professional photographer and producing an intervention report.",
@@ -127,7 +127,7 @@
             {
                 "id": "3",
                 "title": "Back-end of a book rating site",
-                "picture_src": "/assets/backend_project.webp",
+                "picture_src": "/my-website/assets/backend_project.webp",
                 "linkGit": "https://github.com/studentsjj/mon_vieux_grimoire_backend",
                 "tags":["MERN", "Database", "Authentication","Authorization","GREEN CODE"],
                 "col_project": "Develop the Back-end of a book rating site that allows members to add a new book and put a rating visible to the public. The project must comply with Green Code best practices by taking into account the size of the images transmitted by users.",
@@ -137,7 +137,7 @@
             {
                 "id": "4",
                 "title": "Creating and publishing a developer portfolio",
-                "picture_src": "/assets/myWebsite_project.webp",
+                "picture_src": "/my-website/assets/myWebsite_project.webp",
                 "linkGit": "https://github.com/studentsjj/my-website",
                 "tags":["REACT", "FIGMA", "Nodemailer","Sass","GITHUB-PAGES", "User eXperience"],
                 "col_project": "Develop a developer portfolio in order to present the projects carried out and present the associated skills.",
