@@ -5,7 +5,7 @@ import { LanguageContext } from "../LanguageContext";
 import useFetch from "../../utils";
 
 function BtnModalLegal(){
-    const { data, isLoading, error } = useFetch(`../data.json`);
+    const { data, isLoading, error } = useFetch(`/my-website/data.json`);
     const [isOpen, setIsOpen] = useState(false);
     const [language] = useContext(LanguageContext)
     

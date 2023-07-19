@@ -33,7 +33,7 @@ function Project() {
    useEffect(() => {
         async function fetchData() {
             try {
-                const response = await fetch(`/data.json`);
+                const response = await fetch(`/my-website/data.json`);
                 const data = await response.json();
                 setData(data)
                 const project = data[language]?.project.find(

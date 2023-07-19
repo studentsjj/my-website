@@ -23,7 +23,7 @@ function Home () {
         document.documentElement.lang = "fr";
     });
     document.querySelector('meta[name=description]')?.setAttribute('content','Portfolio de Stéphanie Bertaudeau, développeur web, qui vous propose la meilleure solution technique optimisée et sécurisée pour vos applications Web adaptée à vos besoins')
-    const { data, isLoading, error } = useFetch(`data.json`);
+    const { data, isLoading, error } = useFetch(`/my-website/data.json`);
     if (error) {
         <NavLink to="/Error"></NavLink>;
     }

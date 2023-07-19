@@ -11,7 +11,7 @@ import { LanguageContext } from "../../components/LanguageContext";
 
 
 function Contact () {
-    const { data, isLoading, error } = useFetch(`data.json`);
+    const { data, isLoading, error } = useFetch(`/my-website/data.json`);
     if (error) {
         <NavLink to="/Error"></NavLink>;
     }
@@ -30,7 +30,7 @@ function Contact () {
             <BtnMenu />
             <Header />
             <div className="form"> 
-                <ContactForm />
+                <ContactForm/>
             </div>
             <Footer />
             <BtnModalLegal />

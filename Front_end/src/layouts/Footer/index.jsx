@@ -6,7 +6,7 @@ import { LanguageContext } from "../../components/LanguageContext";
 
 
 function Footer() {
-    const { data, isLoading, error } = useFetch(`../data.json`);
+    const { data, isLoading, error } = useFetch(`/my-website/data.json`);
     const [language] = useContext(LanguageContext)
     return (
         <footer>

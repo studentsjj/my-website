@@ -8,7 +8,7 @@ import useFetch from "../../utils";
 import { LanguageContext } from "../../components/LanguageContext";
 
 function Header() {
-    const { data, isLoading, error } = useFetch(`../data.json`);
+    const { data, isLoading, error } = useFetch(`/my-website/data.json`);
     const [language] = useContext(LanguageContext)
     
     return (

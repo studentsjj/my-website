@@ -15,7 +15,7 @@ import BtnModalLegal from '../../components/BtnModalLegal';
 import { LanguageContext } from '../../components/LanguageContext';
 
 function Portfolio() {
-    const { data, isLoading, error } = useFetch(`data.json`);
+    const { data, isLoading, error } = useFetch(`/my-website/data.json`);
     if (error) {
         <NavLink to="/Error"></NavLink>;
     }
@@ -56,9 +56,9 @@ function Portfolio() {
             < section className='portfolio_todo'>
                 <h2><Title content = {data[language]?.portfolio_todo_title} /></h2>
                 <div className='portfolio_todo__gallery' >
-                    <GalleryCard   contentTitle ={data[language]?.portfolio_todo_card_one} picture_src={'/assets/mecanique_project.webp'} />
-                    <GalleryCard  contentTitle ={data[language]?.portfolio_todo_card_two} picture_src={'/assets/4lReds_project.webp'}/> 
-                    <GalleryCard   contentTitle ={data[language]?.portfolio_todo_card_three} picture_src={'/assets/viticulture_project.webp'}/>
+                    <GalleryCard   contentTitle ={data[language]?.portfolio_todo_card_one} picture_src={'/my-website/assets/mecanique_project.webp'} />
+                    <GalleryCard  contentTitle ={data[language]?.portfolio_todo_card_two} picture_src={'/my-website/assets/4lReds_project.webp'}/> 
+                    <GalleryCard   contentTitle ={data[language]?.portfolio_todo_card_three} picture_src={'/my-website/assets/viticulture_project.webp'}/>
                 </div>
             </section>
         </main>

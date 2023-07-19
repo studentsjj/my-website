@@ -31,7 +31,7 @@ import useFetch from "../../utils";
 import { LanguageContext } from '../../components/LanguageContext';
 
 function About() {
-    const { data, isLoading, error } = useFetch(`data.json`);
+    const { data, isLoading, error } = useFetch(`/my-website/data.json`);
     if (error) {
         <NavLink to="/Error"></NavLink>;
     }

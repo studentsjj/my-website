@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
@@ -15,9 +15,9 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/my-website">
+    <BrowserRouter basename="/my-website" >
             <Routes>
-                <Route exact path="/my-website" element={<Home />} />
+                <Route exact path="/" element={<Home />} />
                 <Route path="/About me" element={<About />} />
                 <Route path="/Portfolio" element={<Portfolio />} />
                 <Route path="/Project/:id" element={<Project />} />

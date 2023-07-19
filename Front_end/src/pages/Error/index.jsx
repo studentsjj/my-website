@@ -11,7 +11,7 @@ import { LanguageContext } from '../../components/LanguageContext';
 
 
 function Error() {
-    const { data, isLoading, error } = useFetch(`data.json`);
+    const { data, isLoading, error } = useFetch(`/my-website/data.json`);
      // Choose language
      const [language, setLanguage] = useState(() => {
         const langLocalStorage = localStorage.getItem("language");
@@ -20,7 +20,7 @@ function Error() {
     useEffect(() => {
          localStorage.setItem("language", language);
      }, [language]);
-     
+
     return (
         <>
          <LanguageContext.Provider value ={[language, setLanguage]}>
