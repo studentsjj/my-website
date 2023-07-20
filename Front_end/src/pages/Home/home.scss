@@ -35,9 +35,6 @@ main {
     background: linear-gradient(45deg, $secondary-color,  $third-color);
     & h2 {
         text-align: center;
-        @media (min-width: 768px) {
-            font-size: 1.5em;
-        }
     }
     & > p {
         text-align: center;
@@ -157,7 +154,7 @@ main {
         height : 100%;
         & > .tag {
             text-align: center;
-            width : 30%;
+            width : 40%;
             background-color: $primary-color;
             color : white;
         }
