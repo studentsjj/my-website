@@ -21,7 +21,7 @@ const handleSubmit = async (e) => {
       email: email.value,
       message: message.value,
   };
-  let response = await fetch("http://localhost:5000/contact", {
+  let response = await fetch("https://studentsjj.github.io/my-website/Contact", {
       method: "POST",
       headers: {
           "Content-Type": "application/json;charset=utf-8",
