@@ -23,6 +23,7 @@ const handleSubmit = async (e) => {
   };
   let response = await fetch("https://studentsjj.github.io/my-website/Contact", {
       method: "POST",
+      mode :'no-cors',
       headers: {
           "Content-Type": "application/json;charset=utf-8",
       },
