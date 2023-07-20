@@ -7,8 +7,8 @@ require('dotenv').config();
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use("/", router);
-app.listen(5000, () => console.log("Server Running"));
+app.use("/my-website/", router);
+//app.listen(5000, () => console.log("Server Running"));
 
 const contactEmail = nodemailer.createTransport({
     service: 'gmail',
@@ -30,7 +30,7 @@ const contactEmail = nodemailer.createTransport({
     }
   });
 
-  router.post("/contact", (req, res) => {
+  router.post("/my-website/contact", (req, res) => {
     const name = req.body.name;
     const firstname = req.body.firstname;
     const email = req.body.email;
