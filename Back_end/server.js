@@ -5,13 +5,18 @@ const nodemailer = require("nodemailer");
 require('dotenv').config();
 
 const app = express();
+
+var corsOption ={
+  origin:['https://studentsjj.github.io', 'http//localhost:5000']
+}
 app.use(cors());
 app.use(express.json());
-app.use("/my-website/", router);
-//app.listen(5000, () => console.log("Server Running"));
+app.use("/my-website", router);
+app.listen(5000, () => console.log("Server Running"));
 
 const contactEmail = nodemailer.createTransport({
     service: 'gmail',
+   // port : 465,
     auth: {
       user: process.env.MAIL,
       pass: process.env.PASS,
@@ -30,7 +35,7 @@ const contactEmail = nodemailer.createTransport({
     }
   });
 
-  router.post("/contact", (req, res) => {
+  router.post("/contact", cors(corsOption), (req, res) => {
     const name = req.body.name;
     const firstname = req.body.firstname;
     const email = req.body.email;

@@ -21,26 +21,27 @@ const handleSubmit = async (e) => {
       email: email.value,
       message: message.value,
   };
-  let response = await fetch("/my-website/Contact", {
+  let response = await fetch(`${window.location.protocol}//${window.location.host}/contact`, {
       method: "POST",
       mode :'no-cors',
       headers: {
           "Content-Type": "application/json;charset=utf-8",
       },
       body: JSON.stringify(details),
-  });
+  })
   setStatus(data[language]?.form_btn);
   setDouble(true);
   let result = await response.json();
+
   if (result.status) {
       setStatusSend(1);
   } else {
-      setStatusSend(2);
-  }
+     setStatusSend(2);
+ }
 };
 
 return (
-  <form onSubmit={handleSubmit}>
+  <form onSubmit={handleSubmit} >
       <div>
           <legend>{data[language]?.form_title}</legend>
       </div>
