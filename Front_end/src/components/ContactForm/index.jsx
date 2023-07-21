@@ -21,7 +21,7 @@ const handleSubmit = async (e) => {
       email: email.value,
       message: message.value,
   };
-  let response = await fetch(`${window.location.protocol}//${window.location.host}/contact`, {
+  let response = await fetch(`${window.location.protocol}//${window.location.host}/my-website/contact`, {
       method: "POST",
       mode :'no-cors',
       headers: {
