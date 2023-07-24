@@ -27,9 +27,11 @@
         "form_firstname":"Prénom",
         "form_message":"Votre message",
         "form_btn": "Envoyez", 
+        "form_btn_mailto" : "Cliquez ici pour ouvrir votre boîte mail et envoyez votre message",
         "form_btn_status" : "Envoi...",
         "form_statusSend_error" :"Une erreur s'est produite lors de l'envoi de votre message.",
         "form_statusSend_ok" : "Votre message a bien été envoyé.",
+        "form_statusSend_mailto" : "Avez-vous bien envoyé votre message ? Merci et à très bientôt !",
         "project" : [
             {
                 "id" :"1",
@@ -100,9 +102,11 @@
         "form_firstname":"FirstName",
         "form_message":"Your message",
         "form_btn": "Send",
+        "form_btn_mailto": "Click here to open your mailbox and send your message",
         "form_btn_status" : "Sending...",
         "form_statusSend_error" :"An error occurred while sending your message.",
         "form_statusSend_ok": "Your message has been sent successfully.",
+        "form_statusSend_mailto": "Did you send your message? Thank you and see you soon!",
         "project": [
             {
                 "id": "1",

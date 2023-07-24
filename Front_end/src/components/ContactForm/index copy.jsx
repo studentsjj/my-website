@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+/*import React, { useState, useEffect, useContext } from "react";
 import "./contactForm.scss";
 import useFetch from "../../utils";
 import { LanguageContext } from "../LanguageContext";
@@ -6,17 +6,40 @@ import { LanguageContext } from "../LanguageContext";
 const ContactForm = () => {
 const { data, isLoading, error } = useFetch(`data.json`); 
 const [language]=useContext(LanguageContext)
-
-const [statusSend, setStatusSend] = useState(false);
+const [status, setStatus] = useState(false);
+const [statusSend, setStatusSend] = useState(0);
 const [double, setDouble] = useState(false);   
 
-const handleSubmit =  () => {
-    setDouble(true);
-    setStatusSend(true)
-}
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setStatus(true);
+  
+  const { name, firstname, email, message } = e.target.elements;
+  let details = {
+      name: name.value,
+      firstname : firstname.value,
+      email: email.value,
+      message: message.value,
+  };
+  let response = await fetch("http://localhost:5000/my-website/contact", {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify(details),
+  });
+  setStatus(data[language]?.form_btn);
+  setDouble(true);
+  let result = await response.json();
+  if (result.status) {
+      setStatusSend(1);
+  } else {
+      setStatusSend(2);
+  }
+};
 
 return (
-  <form id ="contactForm" method='post' action ='mailto:contactform.studentsjj@gmail.com?subject=Demande de contact' encType='text/plain' onSubmit={handleSubmit} >
+  <form id ="contactForm" onSubmit={handleSubmit}>
       <div>
           <legend>{data[language]?.form_title}</legend>
       </div>
@@ -62,17 +85,20 @@ return (
           ></textarea>
       </div>
       <div>
-          <button  id="form_btn" type="submit"  disabled={double}>{data[language]?.form_btn_mailto}
+          <button disabled={double} id="form_btn" type="submit">
+              {status ? data[language]?.form_btn_status : data[language]?.form_btn}
           </button>
       </div>
-      {statusSend ? (
+      {statusSend > 0 ? (
           <div>
               <p>
-                {data[language]?.form_statusSend_mailto}
+                  {statusSend !== 1
+                      ? data[language]?.form_statusSend_error
+                      : data[language]?.form_statusSend_ok}{" "}
               </p>
           </div>
       ) : null}
   </form>
 );
 };
-export default ContactForm;
+export default ContactForm;*/
