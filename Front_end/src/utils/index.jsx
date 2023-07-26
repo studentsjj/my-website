@@ -11,7 +11,7 @@ function useFetch(url) {
         setLoading(true);
         async function fetchData() {
             try {
-                const response = await fetch(url);
+                const response = await fetch(url, {"cache": "no-cache"});
                 const data = await response.json();
                 setData(data);
             } catch (err) {

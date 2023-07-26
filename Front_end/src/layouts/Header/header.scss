@@ -56,6 +56,10 @@
         border : solid 2px $third-color;
         background-color: transparent;
    }
+   & > img {
+    height: 45px;
+    width : 51px;
+   }
 }
 .iconNavbar{
     display: flex;
