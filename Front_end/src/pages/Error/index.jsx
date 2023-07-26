@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './error.scss';
 import Header from '../../layouts/Header';
 import Footer from '../../layouts/Footer';
@@ -8,6 +8,7 @@ import iconHome from '../../assets/🦆 icon _home.png'
 import BtnModalLegal from '../../components/BtnModalLegal';
 import useFetch from '../../utils';
 import { LanguageContext } from '../../components/LanguageContext';
+import { DarkModeContext } from '../../components/DarkModeContext';
 
 
 function Error() {
@@ -20,23 +21,33 @@ function Error() {
     useEffect(() => {
          localStorage.setItem("language", language);
      }, [language]);
+     // Choose DarkMode
+    const [darkMode, setDarkMode] = useState(() => {
+        const darkModeLocalStorage = localStorage.getItem("darkMode");
+        return darkModeLocalStorage==="true" ?  darkModeLocalStorage : "false" ;
+    });
+    useEffect(() => {
+        localStorage.setItem("darkMode", darkMode);
+    }, [darkMode]);
 
     return (
         <>
-         <LanguageContext.Provider value ={[language, setLanguage]}>
+        <LanguageContext.Provider value ={[language, setLanguage]}>
+        <DarkModeContext.Provider value={{darkMode, setDarkMode}} >
         <span className='pageError'>
             <Header />
         </span>
-        < section className='error'>
+        < section className={darkMode==='true'? 'error dark-mode' : 'error'}>
             <p>OUPS !!!</p>
             <p>ERROR 404 !</p>
-            <p>La page que vous recherchez n'existe pas ...</p>
-            <p>Pour revenir à la page d'accueil c'est par là</p>
+            <p>{data[language]?.error_p1}</p>
+            <p>{data[language]?.error_p2}</p>
             <ArrowAnimation />
-            <NavLink to ='/'> <img src ={iconHome} alt =''/></NavLink>
+            <Link to ='/'> <img src ={iconHome} alt =''/></Link>
         </section>
         <Footer />
         <BtnModalLegal />
+        </DarkModeContext.Provider>
         </LanguageContext.Provider>
         </>
     )

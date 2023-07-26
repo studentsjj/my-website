@@ -2,10 +2,12 @@ import React, { useState, useContext } from "react";
 import "./contactForm.scss";
 import useFetch from "../../utils";
 import { LanguageContext } from "../LanguageContext";
+import { DarkModeContext } from "../DarkModeContext";
 
 const ContactForm = () => {
 const { data, isLoading, error } = useFetch(`data.json`); 
-const [language]=useContext(LanguageContext)
+const [language]=useContext(LanguageContext);
+const {darkMode}=useContext(DarkModeContext);
 
 const [statusSend, setStatusSend] = useState(false);
 const [double, setDouble] = useState(false);   
@@ -16,7 +18,7 @@ const handleSubmit =  () => {
 }
 
 return (
-  <form id ="contactForm" method='post' action ='mailto:contactform.studentsjj@gmail.com?subject=Demande de contact' encType='text/plain' onSubmit={handleSubmit} >
+  <form id ="contactForm" className={darkMode==='true'? 'form_contact dark-mode': ''} method='post' action ='mailto:contactform.studentsjj@gmail.com?subject=Demande de contact' encType='text/plain' onSubmit={handleSubmit} >
       <div>
           <legend>{data[language]?.form_title}</legend>
       </div>

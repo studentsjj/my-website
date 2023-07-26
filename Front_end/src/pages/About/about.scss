@@ -10,7 +10,9 @@
     font-weight: bold;
     height: 100%;
     padding: 20px 10px 40px 10px;
-
+    &.dark-mode {
+        background: linear-gradient(to bottom, $secondary-color-dark,  $third-color-dark);
+    }
     & .title {
         margin: 20px 0 20px 0;
         font-size: 1.2em;
@@ -70,6 +72,9 @@
     background: $third-color;
     height: 100%;
     padding: 60px 10px 40px 10px;
+    &.dark-mode {
+        background: $secondary-color-dark;
+    }
     & p{
         padding: 5vh;
         border-radius: 50%;
@@ -98,13 +103,18 @@
     width: 100%;
     padding-bottom: 30px;
     background: linear-gradient(to left, ($secondary-color, $third-color));
-
+    &.dark-mode {
+        background: $secondary-color-dark;
+    }
     & > .tag {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         width: 50%;
         background: linear-gradient(to bottom, ($secondary-color, $third-color));
+        &.dark-mode {
+            color :$primary-color-dark;
+        }
     }
    
 }
@@ -113,7 +123,9 @@
     color: $primary-color;
     padding: 20px 10px 50px 10px;
     background: $third-color;
-   
+    &.dark-mode {
+        background: linear-gradient(to bottom, ($secondary-color-dark, $third-color-dark));
+    }
     &__icon {
         margin: 0 5vw 0 5vw;
         border : thick double  $primary-color;
@@ -133,9 +145,7 @@
         & > div {
             display: flex;
             justify-content: center;
-           
         }
     }
 }
-       
 }

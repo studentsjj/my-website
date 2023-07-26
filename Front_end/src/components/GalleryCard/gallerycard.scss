@@ -6,9 +6,8 @@
     align-content: center;
     background: linear-gradient(to bottom, $secondary-color, $third-color,);
     border-radius: 20px;
-    margin : 30px 20px 0 20px;
+    margin : 30px 20px 20px 20px;
     max-width: 450px;
-    //height : 90%;
     @media(min-width: 768px){
         margin: 20px 0 30px 0;
         max-height: 350px;
@@ -30,7 +29,11 @@
     & p {
         margin: 0;
         padding: 10px;
+        height: 50px;
         color: $primary-color;
-}
+        @media (min-width: 1440px) {
+            height: 70px;
+        }
+    }
 }
 

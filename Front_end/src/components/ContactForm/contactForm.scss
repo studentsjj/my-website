@@ -54,5 +54,17 @@ form {
             height: 200px;
     }
 }
-
+.form_contact.dark-mode {
+    background: $primary-color-dark;
+    &  input, textarea, button, p {
+        background: $primary-color-dark;
+    }
+    & ::placeholder, input, textarea,button, p{
+        color: $third-color;
+    }
+    & button:disabled{
+        background: $primary-color-dark;
+        color : $primary-color-dark;
+    }
+}
     

@@ -29,6 +29,7 @@ import ArrowLeft from '../../components/ArrowLeft';
 import BtnModalLegal from '../../components/BtnModalLegal';
 import useFetch from "../../utils";
 import { LanguageContext } from '../../components/LanguageContext';
+import { DarkModeContext } from '../../components/DarkModeContext';
 
 function About() {
     const { data, isLoading, error } = useFetch(`/my-website/data.json`);
@@ -43,16 +44,25 @@ function About() {
    useEffect(() => {
         localStorage.setItem("language", language);
     }, [language]);
+    // Choose DarkMode
+    const [darkMode, setDarkMode] = useState(() => {
+        const darkModeLocalStorage = localStorage.getItem("darkMode");
+        return darkModeLocalStorage==="true" ?  darkModeLocalStorage : "false" ;
+    });
+    useEffect(() => {
+        localStorage.setItem("darkMode", darkMode);
+    }, [darkMode]);
 
     return(
         <> 
             <HelmetProvider>
             <LanguageContext.Provider value ={[language, setLanguage]}>
+            <DarkModeContext.Provider value ={{darkMode, setDarkMode}} >
             <Seo title ='Stéphanie Bertaudeau, développeur Web' description ='Portfolio de Stéphanie Bertaudeau, développeur web, qui vous propose la meilleure solution technique optimisée et sécurisée pour vos applications Web adaptée à vos besoins' image = 'http://assets/myWebsite_project.png' imageAlt ='website Home' name='' url='' />
             <BtnMenu />
             <Header />
-            <main id="arrowTop">
-                <div className='education'>
+            <main id="arrowTop" className={darkMode==='true'? 'dark-mode' : ''}>
+                <div className={darkMode==='true' ? 'education dark-mode' :'education'}>
                 <h1><Title content = {data[language]?.about_title} /></h1>
                 <ArrowRight />
                 <span>2022-2023</span>
@@ -67,18 +77,18 @@ function About() {
                 </Masonry >
                 <ArrowLeft />
             </div>
-            <div className='explain'> 
+            <div className={darkMode==='true' ? 'explain dark-mode' :'explain'}> 
                 <p>{data[language]?.about_explain}</p> 
                 <ArrowRight />  
             </div>
-            <section className='softSkills'>  
+            <section className={darkMode==='true' ? 'softSkills dark-mode' :'softSkills'}>  
                 <h2><Title content = 'Soft SKills' /></h2>
                 {data[language]?.about_soft_skills && data[language]?.about_soft_skills.map((tag, index) => (
                             <Tag tag={tag} key={index} className ='softSkills__tags-tag'/>
                         ))}
                 <ArrowLeft />   
             </section>
-            <section className='hardSkills'>
+            <section className={darkMode==='true' ? 'hardSkills dark-mode' : 'hardSkills'}>
                 <h2><Title content = 'Hard Skills' /></h2>
                 <div className='hardSkills__icon'>
                     <Masonry breakpointCols={3} className='hardSkills__icon-column'>
@@ -104,6 +114,7 @@ function About() {
             <BtnContact />
             <Footer />
             <BtnModalLegal />
+            </DarkModeContext.Provider>
             </LanguageContext.Provider>
             </HelmetProvider>
         </>

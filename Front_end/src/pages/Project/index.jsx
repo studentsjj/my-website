@@ -13,6 +13,7 @@ import Collapse from '../../components/Collapse';
 import gitIcon from '../../assets/🦆 icon _github_blue.png'
 import BtnModalLegal from '../../components/BtnModalLegal';
 import { LanguageContext } from '../../components/LanguageContext';
+import { DarkModeContext } from '../../components/DarkModeContext';
 
 function Project() {
     
@@ -24,6 +25,15 @@ function Project() {
     useEffect(() => {
         localStorage.setItem("language", language);
     }, [language]);
+    // Choose DarkMode
+    const [darkMode, setDarkMode] = useState(() => {
+        const darkModeLocalStorage = localStorage.getItem("darkMode");
+        return darkModeLocalStorage==="true" ?  darkModeLocalStorage : "false" ;
+    });
+    useEffect(() => {
+        localStorage.setItem("darkMode", darkMode);
+    }, [darkMode]);
+
     const [data, setData] = useState([]);
     const projectUrl = useParams();
     const [project, setProject] = useState({});
@@ -59,10 +69,11 @@ return (project && data ?
         (<>
             <HelmetProvider >
             <LanguageContext.Provider value ={[language, setLanguage]}>
+            <DarkModeContext.Provider value={{darkMode, setDarkMode}}>
             <Seo title ='Stéphanie Bertaudeau, développeur Web' description ='Portfolio de Stéphanie Bertaudeau, développeur web, qui vous propose la meilleure solution technique optimisée et sécurisée pour vos applications Web adaptée à vos besoins' image = 'http://assets/myWebsite_project.png' imageAlt ='website Home' name='' url='' />
             <BtnMenu />
             <Header />
-            <section className='project' id="arrowTop">
+            <section className={darkMode==='true' ? 'project dark-mode' : 'project'} id="arrowTop">
                 <div className='project__banner'>
                     <img  src ={project.picture_src} alt='' />
                 </div>
@@ -84,6 +95,7 @@ return (project && data ?
             <BtnContact />
             <Footer />
             <BtnModalLegal />
+            </DarkModeContext.Provider>
             </LanguageContext.Provider>
             </ HelmetProvider >
         </>) : <Navigate to="/Error" />

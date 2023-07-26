@@ -1,8 +1,12 @@
 @import '../../styles/variables.scss';
 
+
 .portfolio_done, .portfolio_todo {
     background: linear-gradient(to top, $secondary-color,  $third-color );
     padding-bottom: 30px;
+    &.dark-mode {
+        background: linear-gradient(to bottom, $secondary-color-dark,  $third-color-dark );
+    }
     & h2{
         margin : 20px auto;
         @media (min-width : 768px) {

@@ -1,7 +1,8 @@
-import React, { useEffect, useState }from 'react';
+import React, {useEffect, useState }from 'react';
 import { Link, NavLink } from "react-router-dom";
 import {HelmetProvider} from 'react-helmet-async'
 import './home.scss';
+
 import Seo from '../../components/Seo';
 import Header from '../../layouts/Header';
 import Footer from '../../layouts/Footer'
@@ -17,6 +18,7 @@ import ArrowLeft from '../../components/ArrowLeft';
 import BtnModalLegal from '../../components/BtnModalLegal';
 import useFetch from "../../utils";
 import { LanguageContext } from '../../components/LanguageContext';
+import { DarkModeContext } from '../../components/DarkModeContext';
 
 function Home () {
     useEffect(() => {
@@ -39,15 +41,25 @@ function Home () {
     if (data[language]?.project) { 
         var dataSort = data[language]?.project.sort((a, b) => b.id - a.id);
     }
+    // Choose DarkMode
+    const [darkMode, setDarkMode] = useState(() => {
+        const darkModeLocalStorage = localStorage.getItem("darkMode");
+        return darkModeLocalStorage==="true" ?  darkModeLocalStorage : "false" ;
+    });
+    useEffect(() => {
+        localStorage.setItem("darkMode", darkMode);
+    }, [darkMode]);
+
  
 return (
 <>
     <HelmetProvider>
     <LanguageContext.Provider value ={[language, setLanguage]}>
+    <DarkModeContext.Provider value ={{darkMode, setDarkMode}} >
     <Seo title ='Stéphanie Bertaudeau, développeur Web' description ='Portfolio de Stéphanie Bertaudeau, développeur web, qui vous propose la meilleure solution technique optimisée et sécurisée pour vos applications Web adaptée à vos besoins' image = 'http://assets/myWebsite_project.png' imageAlt ='website Home' name='' url='' />
-    <BtnMenu />
-    <Header />
-    <main id="arrowTop">
+    <BtnMenu  />
+    <Header  />
+    <main id="arrowTop" className={darkMode ==='true' ? 'dark-mode' : ''} >
         <div className='banner'>
             <div className='bubble__one'></div>
             <div className='bubble__two'></div>
@@ -79,7 +91,7 @@ return (
                     </div>
         <ArrowRight />
         </section>
-    </main>
+        
     <article className='gallery'>
         <h2><Title content = {data[language]?.gallery_title} /></h2>
         <div className="portfolio_done__gallery">
@@ -100,9 +112,11 @@ return (
                     )))}
         </div>
     </article>
+    </main>
     <BtnContact />
     <Footer />
     <BtnModalLegal />
+    </DarkModeContext.Provider>
     </LanguageContext.Provider>
     </HelmetProvider>
 </>

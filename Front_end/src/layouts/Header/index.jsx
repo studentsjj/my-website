@@ -1,15 +1,17 @@
-import React, {useState, useEffect, useContext} from "react";
+import React, {useContext} from "react";
 import { NavLink } from "react-router-dom";
 import "./header.scss";
 import iconHome from '../../assets/🦆 icon _home.png'
-import iconMoon from'../../assets/🦆 icon _moon bold_.png'
 import BtnLanguage from "../../components/BtnLanguage";
 import useFetch from "../../utils";
 import { LanguageContext } from "../../components/LanguageContext";
 
+import BtnDarkMode from "../../components/BtnDarkMode";
+
 function Header() {
     const { data, isLoading, error } = useFetch(`/my-website/data.json`);
     const [language] = useContext(LanguageContext)
+    
     
     return (
         
@@ -23,8 +25,8 @@ function Header() {
                     <img src ={iconHome} alt ='Home'/>
                 </NavLink>
                 <div className="iconNavbar">    
-                    <BtnLanguage />               
-                    <img id='iconMoon'src ={iconMoon} alt='' />                
+                    <BtnLanguage />
+                    <BtnDarkMode />               
                 </div>
                     </li>
                 <li className="header__navbar--li">

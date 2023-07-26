@@ -26,6 +26,10 @@ body {
 * {
     box-sizing: border-box;
 }
+.dark-mode  {
+    color :$third-color-dark;
+    background: $secondary-color-dark;
+}
 
 main {
     display: flex;
@@ -156,7 +160,7 @@ main {
             text-align: center;
             width : 40%;
             background-color: $primary-color;
-            color : white;
+            color : $third-color;
         }
     }
 }
@@ -226,11 +230,13 @@ main {
 
 .gallerycard__number { 
     text-align: end;
-    margin: 10px 0 40px 0;
+    margin-bottom: 30px;
+    position : relative;
+    top : -20px;
     & span {
         padding : 20px;
         border-radius: 10px;
-        color: white;
+        color: $third-color;
         background-color: $primary-color;
         @media (min-width : 768px) {
             padding : 25px;

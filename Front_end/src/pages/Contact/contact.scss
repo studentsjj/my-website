@@ -7,4 +7,7 @@
     @media (min-width : 768px) {
         padding: 60px 40px;
     }
+    &.dark-mode{
+        background: $secondary-color-dark;
+    }
 }

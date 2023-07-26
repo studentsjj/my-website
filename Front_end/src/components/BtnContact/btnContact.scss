@@ -7,7 +7,7 @@ $shake-intensity: 1%;
     left: 0;
     bottom: 0;
     width: 100%;
-   // margin-top: 20px;
+    margin-top: 20px;
     &:hover{
         animation : bodyshake 300ms cubic-bezier(.4,.1,.6,.9) 1;
     }

@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext} from "react";
 import icon_collapse from "../../assets/icon_collapse.png";
 import "./collapse.scss";
+import { DarkModeContext } from "../DarkModeContext";
 
 function Collapse({ title, content }) {
     const [isOpen, setIsOpen] = useState(false);
+    const {darkMode} = useContext(DarkModeContext);
 
     return (
         <div className="collapse">
@@ -19,13 +21,13 @@ function Collapse({ title, content }) {
                 />
             </span>
             {isOpen ? (
-                <span className="collapse__content">
+                <span className={darkMode==='true'? 'collapse__content dark-mode' : 'collapse__content'}>
                     {Array.isArray(content) ? (
                         content.map((content, index) => {
                             return (
                                 <li
                                     key={index}
-                                    className="collapse__content--list"
+                                    className={darkMode==='true'? 'collapse__content--list dark-mode' : 'collapse__content--list'}
                                 >
                                     {content}
                                 </li>

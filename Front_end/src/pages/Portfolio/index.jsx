@@ -13,6 +13,7 @@ import GalleryCard from '../../components/GalleryCard';
 import useFetch from "../../utils";
 import BtnModalLegal from '../../components/BtnModalLegal';
 import { LanguageContext } from '../../components/LanguageContext';
+import { DarkModeContext } from '../../components/DarkModeContext';
 
 function Portfolio() {
     const { data, isLoading, error } = useFetch(`/my-website/data.json`);
@@ -28,16 +29,25 @@ function Portfolio() {
    useEffect(() => {
         localStorage.setItem("language", language);
     }, [language]);
+    // Choose DarkMode
+    const [darkMode, setDarkMode] = useState(() => {
+        const darkModeLocalStorage = localStorage.getItem("darkMode");
+        return darkModeLocalStorage==="true" ?  darkModeLocalStorage : "false" ;
+    });
+    useEffect(() => {
+        localStorage.setItem("darkMode", darkMode);
+    }, [darkMode]);
 
     return (
     <>
         <HelmetProvider>
         <LanguageContext.Provider value ={[language, setLanguage]}>
+        <DarkModeContext.Provider value ={{darkMode, setDarkMode}}>
         <Seo title ='Stéphanie Bertaudeau, développeur Web' description ='Portfolio de Stéphanie Bertaudeau, développeur web, qui vous propose la meilleure solution technique optimisée et sécurisée pour vos applications Web adaptée à vos besoins' image = 'http://assets/myWebsite_project.png' imageAlt ='website Home' name='' url='' />
         <BtnMenu />
         <Header />
-        <main id="arrowTop">
-            <section className='portfolio_done'>
+        <main id="arrowTop" >
+            <section className={darkMode==='true'? 'portfolio_done dark-mode' : 'portfolio_done'} >
                 <h2><Title content = {data[language]?.portfolio_done_title} /></h2>
             <div className="portfolio_done__gallery">
                     {isLoading ? (
@@ -53,7 +63,7 @@ function Portfolio() {
                     )))}
                 </div>
             </section>
-            < section className='portfolio_todo'>
+            < section className={darkMode==='true'? 'portfolio_todo dark-mode' : 'portfolio_todo'}>
                 <h2><Title content = {data[language]?.portfolio_todo_title} /></h2>
                 <div className='portfolio_todo__gallery' >
                     <GalleryCard   contentTitle ={data[language]?.portfolio_todo_card_one} picture_src={'/my-website/assets/mecanique_project.webp'} />
@@ -65,6 +75,7 @@ function Portfolio() {
         <BtnContact />
         <Footer />
         <BtnModalLegal />
+        </DarkModeContext.Provider>
         </LanguageContext.Provider>
         </HelmetProvider>
     </>
