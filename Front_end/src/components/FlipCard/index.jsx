@@ -1,6 +1,6 @@
 import './flipcard.scss'
-import avatar from '../../assets/avatar_portrait.png'
-import portrait from'../../assets/portrait_website.png'
+import avatar from '../../assets/avatar_portrait.webp'
+import portrait from'../../assets/portrait_website.webp'
 
 function flipCard() {
 

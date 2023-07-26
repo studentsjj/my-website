@@ -62,12 +62,8 @@
     flex-direction: row;
     justify-content: space-between;   
 }
-#btnLanguage, #iconMoon{
+#btnLanguage{
     display: flex;
-    height: 20px;
     margin : 20px 5px 0 10px;
-    @media (min-width : 768px){
-       // width : 40px;
-    }
 }
 
