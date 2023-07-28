@@ -17,7 +17,7 @@ function BtnModalLegal(){
                         setIsOpen(!isOpen);
                     }}
                 >{data[language]?.footer_mentions}</button>
-                {isOpen && <Modal setIsOpen={setIsOpen} />}
+                {isOpen && <Modal setIsOpen={setIsOpen} data={data} language={language}/>}
             </div>
         </>
     )
