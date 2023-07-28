@@ -1,15 +1,19 @@
 @import '../../styles/variables.scss';
 
-
-.portfolio_done, .portfolio_todo {
-    background: linear-gradient(to top, $secondary-color,  $third-color );
+.portfolio_done,
+.portfolio_todo {
+    background: linear-gradient(to top, $secondary-color, $third-color);
     padding-bottom: 30px;
     &.dark-mode {
-        background: linear-gradient(to bottom, $secondary-color-dark,  $third-color-dark );
+        background: linear-gradient(
+            to bottom,
+            $secondary-color-dark,
+            $third-color-dark
+        );
     }
-    & h2{
-        margin : 20px auto;
-        @media (min-width : 768px) {
+    & h2 {
+        margin: 20px auto;
+        @media (min-width: 768px) {
             width: 60%;
         }
     }
@@ -18,35 +22,30 @@
         flex-direction: column;
         justify-content: center;
         margin: 20px 10px 0 10px;
-        @media (min-width : 768px) {
-        flex-direction: row;
-        flex-wrap : wrap;
-        justify-content: space-around;
-    }
-    &-card {
-        display :flex;
-        justify-content: center;
-            @media (min-width : 768px) {
-            width: 45%;
+        @media (min-width: 768px) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
         }
-        & > a {
-            text-decoration: none;
+        &-card {
+            display: flex;
+            justify-content: center;
+            @media (min-width: 768px) {
+                width: 45%;
             }
-        } 
+            & > a {
+                text-decoration: none;
+            }
+        }
     }
     & .title {
-        width : 90%;
-        @media (min-width : 768px) {
+        width: 90%;
+        @media (min-width: 768px) {
             width: 60%;
             font-size: 1.1em;
         }
     }
 }
-
-
 .portfolio_todo {
-    background: $third-color ;
+    background: $third-color;
 }
-
-
-

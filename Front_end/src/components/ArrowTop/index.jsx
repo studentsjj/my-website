@@ -1,14 +1,13 @@
-import './arrowTop.scss'
-import arrowTopIcon from '../../assets/ArrowTop.png'
+import './arrowTop.scss';
+import arrowTopIcon from '../../assets/ArrowTop.png';
 
-function ArrowTop () {
-
+function ArrowTop() {
     return (
         <>
             <a href='#arrowTop' className='arrowTop'>
-                <img src ={arrowTopIcon} alt='Link à the top'/>
+                <img src={arrowTopIcon} alt='Link à the top' />
             </a>
         </>
-    )
+    );
 }
 export default ArrowTop;

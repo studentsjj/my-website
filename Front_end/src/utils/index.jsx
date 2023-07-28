@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-
+import { useState, useEffect } from 'react';
 
 function useFetch(url) {
     const [data, setData] = useState([]);
@@ -11,7 +10,7 @@ function useFetch(url) {
         setLoading(true);
         async function fetchData() {
             try {
-                const response = await fetch(url, {"cache": "no-cache"});
+                const response = await fetch(url, { cache: 'no-cache' });
                 const data = await response.json();
                 setData(data);
             } catch (err) {
@@ -26,4 +25,3 @@ function useFetch(url) {
     return { isLoading, data, error };
 }
 export default useFetch;
-

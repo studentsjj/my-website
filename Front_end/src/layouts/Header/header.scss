@@ -3,15 +3,15 @@
 .header {
     display: flex;
     justify-content: space-between;
-    position : sticky;
-    top:0;
-    width : 100%;
+    position: sticky;
+    top: 0;
+    width: 100%;
     z-index: 1;
-    height : 70px;
+    height: 70px;
     padding: 5px 0 5px 0;
-    background-color : $primary-color;
-   
-    &__navbar{
+    background-color: $primary-color;
+
+    &__navbar {
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -23,28 +23,28 @@
         @media (min-width: 768px) {
             width: 95%;
         }
-        &--li{
+        &--li {
             opacity: 0;
             @media (min-width: 768px) {
-                    opacity : 1;
-                    font-size: 1.4em;
-                }    
+                opacity: 1;
+                font-size: 1.4em;
+            }
             & a {
                 text-decoration: none;
                 color: $third-color;
                 font-size: 0.9em;
-                padding: 5px;  
+                padding: 5px;
             }
             & .active {
                 border-radius: 20px;
                 background-color: $third-color;
-                color:$primary-color;
+                color: $primary-color;
             }
-        }    
+        }
     }
 }
 
-#iconHome{
+#iconHome {
     opacity: 1;
     padding-top: 5px;
     display: flex;
@@ -53,21 +53,20 @@
     margin-left: 5px;
     & .active {
         border-radius: 20px;
-        border : solid 2px $third-color;
+        border: solid 2px $third-color;
         background-color: transparent;
-   }
-   & > img {
-    height: 45px;
-    width : 51px;
-   }
+    }
+    & > img {
+        height: 45px;
+        width: 51px;
+    }
 }
-.iconNavbar{
+.iconNavbar {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;   
+    justify-content: space-between;
 }
-#btnLanguage{
+#btnLanguage {
     display: flex;
-    margin : 20px 5px 0 10px;
+    margin: 20px 5px 0 10px;
 }
-

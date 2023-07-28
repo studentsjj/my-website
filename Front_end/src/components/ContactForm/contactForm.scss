@@ -3,35 +3,38 @@
 form {
     padding: 20px;
     background: $primary-color;
-    @media (min-width : 768px) {
+    @media (min-width: 768px) {
         width: 75%;
         padding: 40px;
-        margin : 0 auto;
+        margin: 0 auto;
         font-size: 1.2em;
     }
     & label {
         visibility: hidden;
     }
-    & legend{
+    & legend {
         text-align: center;
         color: $third-color;
         font-size: 1.1em;
-        @media (min-width : 768px) {
+        @media (min-width: 768px) {
             font-size: 1.4em;
+        }
     }
-}
-& div {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-    &  input, textarea, button, p {
+    & div {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    & input,
+    textarea,
+    button,
+    p {
         color: $primary-color;
         background: $third-color;
         padding: 15px;
         margin-top: 20px;
-        border-radius: 20px; 
-        font-family: inherit; 
+        border-radius: 20px;
+        font-family: inherit;
         font-size: 1em;
         width: 90%;
     }
@@ -40,31 +43,37 @@ form {
         width: 75%;
     }
     & button {
-        @media (min-width : 768px) {
+        @media (min-width: 768px) {
             width: 40%;
         }
-        &:disabled{
+        &:disabled {
             background: $primary-color;
         }
     }
-    & ::placeholder{
-            color: $primary-color;
-        }
-    & #message{
-            height: 200px;
+    & ::placeholder {
+        color: $primary-color;
+    }
+    & #message {
+        height: 200px;
     }
 }
 .form_contact.dark-mode {
     background: $primary-color-dark;
-    &  input, textarea, button, p {
+    & input,
+    textarea,
+    button,
+    p {
         background: $primary-color-dark;
     }
-    & ::placeholder, input, textarea,button, p{
+    & ::placeholder,
+    input,
+    textarea,
+    button,
+    p {
         color: $third-color;
     }
-    & button:disabled{
+    & button:disabled {
         background: $primary-color-dark;
-        color : $primary-color-dark;
+        color: $primary-color-dark;
     }
 }
-    

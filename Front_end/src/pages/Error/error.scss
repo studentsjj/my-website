@@ -1,28 +1,28 @@
 @import '../../styles/variables.scss';
 
-.pageError .header__navbar--li{
+.pageError .header__navbar--li {
     @media (min-width: 768px) {
-        opacity :0;  
+        opacity: 0;
     }
 }
 .error {
     margin: 70px;
     text-align: center;
     height: 70vh;
-    &.dark-mode p{
+    &.dark-mode p {
         color: $third-color;
     }
-    & p{
-        color : $primary-color;
+    & p {
+        color: $primary-color;
         font-size: 2em;
-        @media (min-width: 768px){
+        @media (min-width: 768px) {
             font-size: 2.5em;
         }
     }
     & svg {
-        @media (min-width: 768px){
-        height: 190px;
-        width: 280px;
+        @media (min-width: 768px) {
+            height: 190px;
+            width: 280px;
         }
     }
     & path {
@@ -30,13 +30,13 @@
         stroke-width: 4;
     }
     & polygon {
-        fill : $secondary-color;
+        fill: $secondary-color;
     }
     & img {
         margin-bottom: 20px;
         height: 4em;
-        width : 4em;
-        background : $secondary-color;
+        width: 4em;
+        background: $secondary-color;
     }
     & a {
         text-decoration: none;

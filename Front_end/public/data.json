@@ -1,5 +1,4 @@
 { 
-
     "fr"  : {
         "title": "Développeur Web",
         "navbar_about":"A propos de moi",
@@ -123,6 +122,18 @@
         "form_statusSend_mailto": "Did you send your message? Thank you and see you soon!",
         "error_p1": "The page you are looking for does not exist...",
         "error_p2": "To return to the home page it's this way",
+        "modal_p1":"1 - Site Edition",
+        "modal_span1":"Under article 6 of law n° 2004-575 of June 21, 2004 on confidence in the digital economy, it is specified to users of the website https://studentsjj.github.io /my-website/ the identity of the various stakeholders in the context of its production and monitoring:Owner of the site: Bertaudeau Stéphanie - Contact: contactform.studentsjj@gmail.com Director of publication: Bertaudeau Stéphanie - Contact: contactform. studentsjj@gmail.com. Host: GitHub INC, 88 colin p kelly junior street 94107 San Francisco, united states Data Protection Officer: Bertaudeau Stéphanie - Other contributors: icon: Freepik.com image: OpenClassrooms, Bertaudeau Stéphanie.",
+        "modal_p2": "2 - Intellectual Property and Infringements.",
+        "modal_span2": "Bertaudeau Stéphanie is the owner of the intellectual property rights and holds the rights of use on all the elements accessible on the website, in particular the texts, images, graphics, logos, videos, architecture, icons and sounds. Any Reproduction, representation, modification, publication, adaptation of all or part of the elements of the site, whatever the means or process used, is prohibited, except with the prior written authorization of Bertaudeau Stéphanie. Any unauthorized use of the site or of any any of the elements it contains will be considered as constituting an infringement and prosecuted in accordance with the provisions of articles L.335-2 and following of the Intellectual Property Code.",
+        "modal_p3": "3 - Disclaimer.",
+        "modal_span3": "Bertaudeau Stéphanie cannot be held responsible for direct and indirect damage caused to the user's equipment when accessing the site https://studentsjj.github.io/my-website/.Bertaudeau Stéphanie declines all responsibility for the use that may be made of the information and content present on https://studentsjj.github.io/my-website/ Bertaudeau Stéphanie undertakes to secure the site https://studentsjj as well as possible. github.io/my-website/, however it cannot be held liable if undesirable data is imported and installed on its site without its knowledge.Interactive spaces (contact space or comments) are available to users. Stéphanie reserves the right to delete, without prior notice, any content posted in this space that would contravene the legislation applicable in France, in particular the provisions relating to data protection. possibility of questioning the civil and/or criminal liability of the user, in particular in the event of a racist, abusive, defamatory or pornographic message, regardless of the medium used (text, photography, etc.).",
+        "modal_p4": "4 - CNIL and management of personal data.",
+        "modal_span4": "In accordance with the provisions of law 78-17 of January 6, 1978 as amended, the user of the site https://studentsjj.github.io/my-website/ has a right of access, modification and deletion of the information collected. To exercise this right, send a message to our Data Protection Officer: Bertaudeau Stéphanie, contactform.studentsjj@gmail.com. For more information on how we process your data (type of data, purpose, recipient...), read our privacy policy.",
+        "modal_p5": "5 - Hypertext links and cookies",
+        "modal_span5":"The site https://studentsjj.github.io/my-website/ contains hypertext links to other sites and accepts no responsibility for these external links or links created by other sites to https://studentsjj.github.io/my-website/ Browsing on the site https://studentsjj.github.io/my-website/ is likely to cause the installation of cookie(s) on the computer of the user. A cookie is a small file which records information relating to the navigation of a user on a site. The data thus obtained make it possible to obtain measurements of frequentation, for example. You have the possibility of 'accept or refuse cookies by modifying the parameters of your browser. No cookies will be placed without your consent. Cookies are stored for a maximum duration of 6 months. For more information on how we use cookies , read our https://github.com/studentsjj/my-website.",
+        "modal_p6": "6 - Applicable law and attribution of jurisdiction.",
+        "modal_span6": "Any dispute in connection with the use of the site https://studentsjj.github.io/my-website/ is subject to French law. Apart from cases where the law does not allow it, it is made exclusive attribution of jurisdiction to the competent courts of Angoulême.",
         "project": [
             {
                 "id": "1",

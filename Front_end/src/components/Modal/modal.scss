@@ -1,13 +1,13 @@
 @import '../../styles/variables.scss';
 
 .modal__container {
-    position : fixed;
+    position: fixed;
     display: flex;
     justify-content: center;
-    top : 80px;
+    top: 80px;
     width: 90%;
     height: 85%;
-    background:$third-color;
+    background: $third-color;
     color: $third-color;
     z-index: 5;
     border-radius: 16px;
@@ -19,18 +19,18 @@
         max-width: 1400px;
         text-align: justify;
         padding: 10px;
-        & p, span{
+        & p,
+        span {
             max-width: 90%;
         }
     }
 }
-.BtnModalClose{
-    position : absolute;
-    top : 20px;
-    right : 20px;
-    padding : 5px;
+.BtnModalClose {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 5px;
     height: 15px;
     width: 15px;
-    background : $primary-color;
-
+    background: $primary-color;
 }

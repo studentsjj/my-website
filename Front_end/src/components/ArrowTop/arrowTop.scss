@@ -4,11 +4,11 @@ a.arrowTop {
     padding: 3px 2% 0 0;
     background-color: $secondary-color;
     & img {
-        border : solid 3px $primary-color;
-        padding : 10px;
+        border: solid 3px $primary-color;
+        padding: 10px;
         border-radius: 50%;
-        width: 18px; 
-        height: 22px; 
+        width: 18px;
+        height: 22px;
         box-sizing: revert;
     }
 }

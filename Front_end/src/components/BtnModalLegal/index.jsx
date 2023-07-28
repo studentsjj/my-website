@@ -1,25 +1,33 @@
-import React, { useState, useContext } from "react";
-import './btnModalLegal.scss'
-import Modal from '../Modal'
-import { LanguageContext } from "../LanguageContext";
-import useFetch from "../../utils";
+import React, { useState, useContext } from 'react';
+import './btnModalLegal.scss';
+import Modal from '../Modal';
+import { LanguageContext } from '../LanguageContext';
+import useFetch from '../../utils';
 
-function BtnModalLegal(){
+function BtnModalLegal() {
     const { data, isLoading, error } = useFetch(`/my-website/data.json`);
     const [isOpen, setIsOpen] = useState(false);
-    const [language] = useContext(LanguageContext)
-    
+    const [language] = useContext(LanguageContext);
+
     return (
         <>
-            <div className="btn__modalLegal">
+            <div className='btn__modalLegal'>
                 <button
                     onClick={() => {
                         setIsOpen(!isOpen);
                     }}
-                >{data[language]?.footer_mentions}</button>
-                {isOpen && <Modal setIsOpen={setIsOpen} data={data} language={language}/>}
+                >
+                    {data[language]?.footer_mentions}
+                </button>
+                {isOpen && (
+                    <Modal
+                        setIsOpen={setIsOpen}
+                        data={data}
+                        language={language}
+                    />
+                )}
             </div>
         </>
-    )
+    );
 }
 export default BtnModalLegal;

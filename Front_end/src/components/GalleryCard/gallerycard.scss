@@ -1,19 +1,19 @@
 @import '../../styles/variables.scss';
 
 .gallerycard__container {
-    display : flex;
+    display: flex;
     flex-direction: column;
     align-content: center;
-    background: linear-gradient(to bottom, $secondary-color, $third-color,);
+    background: linear-gradient(to bottom, $secondary-color, $third-color);
     border-radius: 20px;
-    margin : 30px 20px 20px 20px;
+    margin: 30px 20px 20px 20px;
     max-width: 450px;
-    @media(min-width: 768px){
+    @media (min-width: 768px) {
         margin: 20px 0 30px 0;
         max-height: 350px;
     }
-    &:hover{
-        transform : scale(1.05)
+    &:hover {
+        transform: scale(1.05);
     }
     & img {
         object-position: 15% 50%;
@@ -22,7 +22,7 @@
         max-width: 450px;
         height: 200px;
         @media (min-width: 768px) {
-            height : 250px;
+            height: 250px;
             object-position: 15% 40%;
         }
     }
@@ -36,4 +36,3 @@
         }
     }
 }
-

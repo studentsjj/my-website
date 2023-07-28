@@ -1,22 +1,20 @@
 @import '../../styles/variables.scss';
 
 .btnMenu {
-    
-    box-sizing : content-box;
+    box-sizing: content-box;
     @media (min-width: 768px) {
-        opacity : 0;
-    }   
-    & img.icon__menu,img.icon__close {
+        opacity: 0;
+    }
+    & img.icon__menu,
+    img.icon__close {
         position: fixed;
         right: 20px;
         top: 20px;
         width: 2em;
-       // height: 1.5em;
         z-index: 5;
-       // padding: 20px;
         background-color: $primary-color;
     }
-    & img.icon__close{
+    & img.icon__close {
         width: 1em;
     }
     & .header {
@@ -26,25 +24,25 @@
         height: 230px;
         border-radius: 10px 10px 0 0;
         border: dashed $third-color 2px;
-        width : 40vw;
+        width: 40vw;
         min-width: 150px;
         max-width: 170px;
         padding: 10px;
         z-index: 2;
     }
-    & .header__navbar  {
-    flex-direction: column;
-    padding :0;
-    height: 100%;
-        & li{
+    & .header__navbar {
+        flex-direction: column;
+        padding: 0;
+        height: 100%;
+        & li {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             width: 100%;
             font-size: 1.2em;
-            padding : 8px;
-            opacity : 1;
-            & > a{
+            padding: 8px;
+            opacity: 1;
+            & > a {
                 text-align: center;
             }
         }

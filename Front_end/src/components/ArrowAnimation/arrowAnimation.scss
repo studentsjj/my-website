@@ -4,16 +4,15 @@ svg {
     grid-column: 4;
     grid-row: 3;
     overflow: visible;
-       // Fix Safari rendering bug 
+    // Fix Safari rendering bug
     transform: translateZ(0);
     opacity: 0;
     height: 10px;
     @media (min-width: 768px) {
-        opacity : 1;
+        opacity: 1;
         grid-row: 1;
     }
 }
-  
 path {
     stroke-width: 2;
     stroke: #{$third-color};

@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@import '../../styles/variables.scss';
 
 .collapse {
     display: flex;
@@ -44,11 +44,11 @@
             border-bottom-right-radius: 10px;
             font-size: 0.9em;
         }
-        &.dark-mode{
+        &.dark-mode {
             color: $third-color-dark;
             background: $primary-color-dark;
         }
-        &--list{
+        &--list {
             margin: 0;
             padding: 5px;
             color: $primary-color;
@@ -56,12 +56,11 @@
             font-size: 1em;
             line-height: 180%;
             list-style-type: none;
-            &.dark-mode{
+            &.dark-mode {
                 color: $third-color-dark;
                 background: $primary-color-dark;
             }
         }
-        
     }
 }
 

@@ -1,7 +1,6 @@
-import './arrowRight.scss'
+import './arrowRight.scss';
 
-function ArrowRight(){
-
+function ArrowRight() {
     return (
         <>
             <div className='arrowRight'>
@@ -9,6 +8,6 @@ function ArrowRight(){
                 <div className='arrowRight__point'></div>
             </div>
         </>
-    )
+    );
 }
 export default ArrowRight;
